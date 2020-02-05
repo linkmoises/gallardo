@@ -1,4 +1,5 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); } ?>
+<?php get_header(); ?>
 	<div class="container"> <!-- Inicia .container (coloca al centro la estructura de la página) -->
 
 <!-- Jumbotron
@@ -279,3 +280,4 @@
 
 		</div><!-- cierra .main-content -->
 	</div> <!-- cierra .container -->
+<?php get_footer(); ?>
