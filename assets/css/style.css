@@ -1,0 +1,27 @@
+footer #socialicons {
+	font-size: 1.5em;
+}
+
+.post-read-more i {
+	font-size: 1.5em;
+}
+
+.post-read-more i:hover {
+	color: #28a745;
+}
+
+.back-to-top {
+    margin: 0;
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.18);
+    z-index: 100;
+    display: block;
+    text-decoration: none;
+}

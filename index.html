@@ -7,74 +7,44 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link href="assets/css/screen.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
 <script src=assets/js/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
 <script src="https://kit.fontawesome.com/0f01975e5a.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="layout-default">
+<body id="inicio" class="layout-default">
 
-<!-- Menú y navegacion
+<!-- Navegación
 ================================================== -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-    <div class="container pr-0">
 
-		<!-- Inicio Logo -->
-		<a class="navbar-brand" href="#">
-			<img src="assets/images/logo.png" alt="MS">
-		</a>
-		<!-- Fin Logo -->
-
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="collapse navbar-collapse" id="navbarMediumish">
-
-        <!-- Begin Menu -->
-
-            <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio</a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="#">Sobre mí</a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-                </li>
-
-
-<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Escribe para buscar..."/>
-</form>
-            </ul>
-
-        <!-- End Menu -->
-
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
+        <a class="navbar-brand my-0 mr-md-auto"><img src="assets/img/logo.png" width="40%"/></a>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark active" href="#">Inicio</a>
+            <a class="p-2 text-dark" href="#">Blog</a>
+            <a class="p-2 text-dark" href="#">Sobre mí</a>
+            <a class="p-2 text-dark" href="#">Contacto</a>
+        </nav>
+        <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Escribe para buscar..." aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
     </div>
 
-    </div>
-</nav>
-<!-- End Navigation
-================================================== -->
+
+<!-- end nav -->
 
 <div class="site-content">
 
 <div class="container">
 
-<!-- Jumbotron -->
+<!-- Jumbotron
+================================================== -->
 
   <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+      <h1 class="display-4 font-italic">Bienvenido a mi blog personal</h1>
       <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
       <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
     </div>
@@ -84,80 +54,23 @@
 ================================================== -->
 <div class="main-content">
 
-
 <!-- Featured
 ================================================== -->
 <section class="featured-posts">
     <div class="section-title">
-        <h2><span>Featured</span></h2>
+        <h2><span>Destacados</span></h2>
     </div>
     <div class="row">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- begin post -->
-
+<!-- begin post -->
 <div class="col-md-6 mb-30px">
     <div class="listfeaturedtag h-100">
         <div class="row h-100">
             <div class="col-12 col-md-12 col-lg-5 pr-lg-0">
                 <div class="h-100">
                     <div class="wrapthumbnail">
-                        <a href="/mediumish-theme-jekyll/quick-start-guide/">
-
-                            <img class="featured-box-img-cover" src="http://via.placeholder.com/750x500">
-
-                        </a>
+                        <a href="#"><img class="featured-box-img-cover" src="http://via.placeholder.com/750x500"></a>
                     </div>
                 </div>
             </div>
@@ -166,26 +79,21 @@
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">
-                                <a class="text-dark" href="/mediumish-theme-jekyll/quick-start-guide/">Let's test spoilers</a>
-
+                                <a class="text-dark" href="#">Let's test spoilers</a>
                             </h2>
-
                             <h4 class="card-text">Director Roland Suso Richter’s enigmatic psychological thriller (direct to video/DVD) was based upon screenwriter Michael Cooney’s own play “Point of Death” - a title that...</h4>
                         </div>
                         <div class="card-footer b-0 bg-white mt-auto">
                             <div class="wrapfooter">
-
                                 <span class="meta-footer-thumb">
-
-                                <img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x" alt="Sal">
-
+                                <img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy">
                                 </span>
                                 <span class="author-meta">
-                                <span class="post-name"><a target="_blank" href="https://www.wowthemes.net">Sal</a></span><br/>
+                                <span class="post-name"><a target="_blank" href="#">Moy</a></span><br/>
 
                                 <span class="post-date">11 Jan 2018</span>
                                 </span>
-                                <span class="post-read-more"><a href="/mediumish-theme-jekyll//quick-start-guide/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                                <span class="post-read-more"><a href="#" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
@@ -197,25 +105,14 @@
 </div>
 <!-- end post -->
 
-
-
-
-
-
-
-            <!-- begin post -->
-
+<!-- begin post -->
 <div class="col-md-6 mb-30px">
     <div class="listfeaturedtag h-100">
         <div class="row h-100">
             <div class="col-12 col-md-12 col-lg-5 pr-lg-0">
                 <div class="h-100">
                     <div class="wrapthumbnail">
-                        <a href="/mediumish-theme-jekyll/customer-service/">
-
-                            <img class="featured-box-img-cover" src="http://via.placeholder.com/750x500">
-
-                        </a>
+                        <a href="#"><img class="featured-box-img-cover" src="http://via.placeholder.com/750x500"></a>
                     </div>
                 </div>
             </div>
@@ -224,40 +121,21 @@
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">
-                                <a class="text-dark" href="/mediumish-theme-jekyll/customer-service/">Inception Movie</a>
-
-                                <div class="mb-2 mt-2 font-weight-normal">
-                                <div class="rating-holder">
-<div class="c-rating c-rating--regular" data-rating-value="4.5">
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>4</button>
-  <button>5</button>
-</div>
-</div>
-                                </div>
-
+                                <a class="text-dark" href="#">Let's test spoilers</a>
                             </h2>
-
-                            <h4 class="card-text">Review products, books, movies, restaurant and anything you like on your Jekyll blog with Mediumish! JSON-LD ready for review property.
-
-</h4>
+                            <h4 class="card-text">Director Roland Suso Richter’s enigmatic psychological thriller (direct to video/DVD) was based upon screenwriter Michael Cooney’s own play “Point of Death” - a title that...</h4>
                         </div>
                         <div class="card-footer b-0 bg-white mt-auto">
                             <div class="wrapfooter">
-
                                 <span class="meta-footer-thumb">
-
-                                <img class="author-thumb" src="/mediumish-theme-jekyll/assets/images/avatar.png" alt="John">
-
+                                <img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy">
                                 </span>
                                 <span class="author-meta">
-                                <span class="post-name"><a target="_blank" href="https://www.wowthemes.net">John</a></span><br/>
+                                <span class="post-name"><a target="_blank" href="#">Moy</a></span><br/>
 
                                 <span class="post-date">11 Jan 2018</span>
                                 </span>
-                                <span class="post-read-more"><a href="/mediumish-theme-jekyll//customer-service/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                                <span class="post-read-more"><a href="#" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
@@ -268,67 +146,46 @@
     </div>
 </div>
 <!-- end post -->
-
-
-
 
 
     </div>
 </section>
 
 
-
-<!-- Posts Index
+<!-- Post index
 ================================================== -->
 <section class="recent-posts">
 
     <div class="section-title">
-
-        <h2><span>All Stories</span></h2>
-
+        <h2><span>Todas las historias</span></h2>
     </div>
 
     <div class="row listrecent">
 
-
-
-        <!-- begin post -->
-
-
+<!-- begin post -->
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="/mediumish-theme-jekyll/powerful-things-markdown-editor/">
-
-
-
-                        <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="Powerful things you can do with the Markdown editor">
-
-
-
+            <a href="#">
+            <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="Powerful things you can do with the Markdown editor">
             </a>
         </div>
         <div class="card-body">
             <h2 class="card-title">
-                <a class="text-dark" href="/mediumish-theme-jekyll/powerful-things-markdown-editor/">Powerful things you can do with the Markdown editor</a>
-
+                <a class="text-dark" href="#">Powerful things you can do with the Markdown editor</a>
             </h2>
             <h4 class="card-text">There are lots of powerful things you can do with the Markdown editor. If you’ve gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips...</h4>
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
-
                 <span class="meta-footer-thumb">
-
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x" alt="Sal">
-
+                <img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy">
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="https://www.wowthemes.net">Sal</a></span><br/>
-
+                <span class="post-name"><a target="_blank" href="#">Moy</a></span><br/>
                 <span class="post-date">12 Jun 2018</span>
                 </span>
-                <span class="post-read-more"><a href="/mediumish-theme-jekyll/powerful-things-markdown-editor/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                <span class="post-read-more"><a href="#" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -336,45 +193,30 @@
 </div>
 <!-- end post -->
 
-
-
-        <!-- begin post -->
-
-
+<!-- begin post -->
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="/mediumish-theme-jekyll/first-mass-produced/">
-
-
-
-                        <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="The first mass-produced book to deviate from a rectilinear format">
-
-
-
+            <a href="#">
+            <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="Powerful things you can do with the Markdown editor">
             </a>
         </div>
         <div class="card-body">
             <h2 class="card-title">
-                <a class="text-dark" href="/mediumish-theme-jekyll/first-mass-produced/">The first mass-produced book to deviate from a rectilinear format</a>
-
+                <a class="text-dark" href="#">About bundler</a>
             </h2>
-            <h4 class="card-text">The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the...</h4>
+            <h4 class="card-text">There are lots of powerful things you can do with the Markdown editor. If you’ve gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips...</h4>
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
-
                 <span class="meta-footer-thumb">
-
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x" alt="Sal">
-
+                <img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy">
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="https://www.wowthemes.net">Sal</a></span><br/>
-
+                <span class="post-name"><a target="_blank" href="#">Moy</a></span><br/>
                 <span class="post-date">12 Jun 2018</span>
                 </span>
-                <span class="post-read-more"><a href="/mediumish-theme-jekyll/first-mass-produced/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                <span class="post-read-more"><a href="#" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -382,47 +224,30 @@
 </div>
 <!-- end post -->
 
-
-
-        <!-- begin post -->
-
-
+<!-- begin post -->
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="/mediumish-theme-jekyll/education/">
-
-
-
-                        <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="Education must also train one for quick, resolute and effective thinking.">
-
-
-
+            <a href="#">
+            <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="Powerful things you can do with the Markdown editor">
             </a>
         </div>
         <div class="card-body">
             <h2 class="card-title">
-                <a class="text-dark" href="/mediumish-theme-jekyll/education/">Education must also train one for quick, resolute and effective thinking.</a>
-
+                <a class="text-dark" href="#">What happened in my localhost</a>
             </h2>
-            <h4 class="card-text">There are lots of powerful things you can do with the Markdown editor
-
-</h4>
+            <h4 class="card-text">There are lots of powerful things you can do with the Markdown editor. If you’ve gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips...</h4>
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
-
                 <span class="meta-footer-thumb">
-
-                <img class="author-thumb" src="/mediumish-theme-jekyll/assets/images/avatar.png" alt="John">
-
+                <img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy">
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="https://www.wowthemes.net">John</a></span><br/>
-
+                <span class="post-name"><a target="_blank" href="#">Moy</a></span><br/>
                 <span class="post-date">12 Jun 2018</span>
                 </span>
-                <span class="post-read-more"><a href="/mediumish-theme-jekyll/education/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                <span class="post-read-more"><a href="#" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -430,47 +255,30 @@
 </div>
 <!-- end post -->
 
-
-
-        <!-- begin post -->
-
-
+<!-- begin post -->
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="/mediumish-theme-jekyll/acumulated-experience/">
-
-
-
-                        <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="Accumulated experience of social living">
-
-
-
+            <a href="#">
+            <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="Powerful things you can do with the Markdown editor">
             </a>
         </div>
         <div class="card-body">
             <h2 class="card-title">
-                <a class="text-dark" href="/mediumish-theme-jekyll/acumulated-experience/">Accumulated experience of social living</a>
-
+                <a class="text-dark" href="#">Accumulated experience of social living</a>
             </h2>
-            <h4 class="card-text">The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes.
-
-</h4>
+            <h4 class="card-text">The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes.</h4>
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
-
                 <span class="meta-footer-thumb">
-
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x" alt="Sal">
-
+                <img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy">
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="https://www.wowthemes.net">Sal</a></span><br/>
-
+                <span class="post-name"><a target="_blank" href="#">Moy</a></span><br/>
                 <span class="post-date">12 Jun 2018</span>
                 </span>
-                <span class="post-read-more"><a href="/mediumish-theme-jekyll/acumulated-experience/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                <span class="post-read-more"><a href="#" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -478,57 +286,30 @@
 </div>
 <!-- end post -->
 
-
-
-        <!-- begin post -->
-
-
+<!-- begin post -->
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="/mediumish-theme-jekyll/about-bundler/">
-
-
-
-                        <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="About Bundler">
-
-
-
+            <a href="#">
+            <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="Powerful things you can do with the Markdown editor">
             </a>
         </div>
         <div class="card-body">
             <h2 class="card-title">
-                <a class="text-dark" href="/mediumish-theme-jekyll/about-bundler/">About Bundler</a>
-
-                <div class="mb-2 mt-2 font-weight-normal">
-                <div class="rating-holder">
-<div class="c-rating c-rating--regular" data-rating-value="3">
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>4</button>
-  <button>5</button>
-</div>
-</div>
-                </div>
-
+                <a class="text-dark" href="#">Accumulated experience of social living</a>
             </h2>
             <h4 class="card-text">gem install bundler installs the bundler gem through RubyGems. You only need to install it once - not every time you create a new Jekyll project. Here are some additional...</h4>
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
-
                 <span class="meta-footer-thumb">
-
-                <img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x" alt="Sal">
-
+                <img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy">
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="https://www.wowthemes.net">Sal</a></span><br/>
-
-                <span class="post-date">12 May 2018</span>
+                <span class="post-name"><a target="_blank" href="#">Moy</a></span><br/>
+                <span class="post-date">12 Jun 2018</span>
                 </span>
-                <span class="post-read-more"><a href="/mediumish-theme-jekyll/about-bundler/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                <span class="post-read-more"><a href="#" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -536,65 +317,36 @@
 </div>
 <!-- end post -->
 
-
-
-        <!-- begin post -->
-
-
+<!-- begin post -->
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="/mediumish-theme-jekyll/we-all-wait-for-summer/">
-
-
-
-                        <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="We all wait for summer">
-
-
-
+            <a href="#">
+            <img class="img-fluid" src="http://via.placeholder.com/750x500" alt="Powerful things you can do with the Markdown editor">
             </a>
         </div>
         <div class="card-body">
             <h2 class="card-title">
-                <a class="text-dark" href="/mediumish-theme-jekyll/we-all-wait-for-summer/">We all wait for summer</a>
-
-                <div class="mb-2 mt-2 font-weight-normal">
-                <div class="rating-holder">
-<div class="c-rating c-rating--regular" data-rating-value="0.5">
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>4</button>
-  <button>5</button>
-</div>
-</div>
-                </div>
-
+                <a class="text-dark" href="#">We all wait for summer</a>
             </h2>
             <h4 class="card-text">As I engage in the so-called “bull sessions” around and about the school, I too often find that most college men have a misconception of the purpose of education. Most...</h4>
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
-
                 <span class="meta-footer-thumb">
-
-                <img class="author-thumb" src="/mediumish-theme-jekyll/assets/images/avatar.png" alt="John">
-
+                <img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy">
                 </span>
                 <span class="author-meta">
-                <span class="post-name"><a target="_blank" href="https://www.wowthemes.net">John</a></span><br/>
-
-                <span class="post-date">12 Jan 2018</span>
+                <span class="post-name"><a target="_blank" href="#">Moy</a></span><br/>
+                <span class="post-date">12 Jun 2018</span>
                 </span>
-                <span class="post-read-more"><a href="/mediumish-theme-jekyll/we-all-wait-for-summer/" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                <span class="post-read-more"><a href="#" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
 </div>
 <!-- end post -->
-
-
 
     </div>
 
@@ -603,38 +355,20 @@
 <!-- Pagination
 ================================================== -->
 <div class="bottompagination">
-<div class="pointerup"><i class="fa fa-caret-up"></i></div>
-<span class="navigation" role="navigation">
-
-<div class="pagination">
-
-    <span>&laquo; Prev</span>
-
-
-
-
-      <span class="ml-1 mr-1">1</span>
-
-
-
-      <a class="ml-1 mr-1" href="/mediumish-theme-jekyll/page2/">2</a>
+    <div class="pointerup"><i class="fa fa-caret-up"></i></div>
+        <span class="navigation" role="navigation">
+        <div class="pagination">
+            <span>&laquo; Prev</span>
+            <span class="ml-1 mr-1">1</span>
+            <a class="ml-1 mr-1" href="#">2</a>
+            <a class="ml-1 mr-1" href="#">Next &raquo;</a>
+        </div>
+        </span>
+    </div>
+    </div>
 
 
-
-
-    <a class="ml-1 mr-1" href="/mediumish-theme-jekyll/page2/">Next &raquo;</a>
-
-</div>
-
-</span>
-</div>
-
-
-</div>
-
-
-
-</div>
+</div> <!-- /.main-content -->
 
 
 <!-- Begin Footer
@@ -643,16 +377,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                Algunos derechos reservados 2017 - 2020.
+                Algunos derechos reservados 2017 - 2020. Funciona con WordPress.
             </div>
-            <div class="col-md-6 col-sm-6 text-center text-lg-right">
+            <div id="socialicons" class="col-md-6 col-sm-6 text-center text-lg-right">
                 <a target="_blank" href="#"><i class="fab fa-facebook-square"></i></a>
                 <a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
                 <a target="_blank" href="#"><i class="fab fa-twitter-square"></i></a>
             </div>
+            <div class="clearfix"></div>
+             <a href="#inicio" class="back-to-top hidden-md-down"><i class="fa fa-angle-up"></i></a>
         </div>
     </div>
 </footer>
+
 <!-- End Footer
 ================================================== -->
 
@@ -660,8 +397,6 @@
 
 <!-- Scripts
 ================================================== -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
