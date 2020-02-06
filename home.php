@@ -4,11 +4,11 @@
 
 <!-- Jumbotron
 ================================================== -->
-		<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+		<div id="jumbohome" class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
 			<div class="col-md-6 px-0">
 				<h1 class="display-4 font-italic">Bienvenido a mi blog personal</h1>
-				<p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-				<p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+				<p class="lead my-3">Desde aquí hablo un poco de EdTech, Linux, Redes, Seguridad y Medicina.</p>
+				<p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Acá puedes conocer un poco más sobre mí...</a></p>
 			</div>
 		</div>
 <!-- Cierra Jumbotron
@@ -21,7 +21,7 @@
 <!-- Posts Destacados
 ================================================== -->
 			<section class="featured-posts">
-				<div class="section-title"><h2><span>Destacados</span></h2></div>
+				<div class="section-title"><h2><span>Más visitados</span></h2></div>
 				<div class="row"><!-- inicio fila -->
 					<!-- inicio post -->
 					<div class="col-md-6 mb-30px">
