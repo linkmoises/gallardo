@@ -11,25 +11,43 @@
 	<link href="<?php bloginfo("template_url"); ?>/css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/0f01975e5a.js" crossorigin="anonymous"></script>
+<?php wp_head(); ?>
 </head>
 <body id="inicio" class="layout-default">
 
 <!-- Navegación
 ================================================== -->
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
 	<a class="navbar-brand my-0 mr-md-auto"><img src="<?php bloginfo("template_url"); ?>/assets/img/logo.png" width="40%"/></a>
-	<nav class="my-2 my-md-0 mr-md-3">
-		<a class="p-2 text-dark active" href="#">Inicio</a>
-		<a class="p-2 text-dark" href="#">Blog</a>
-		<a class="p-2 text-dark" href="#">Sobre mí</a>
-		<a class="p-2 text-dark" href="#">Contacto</a>
-	</nav>
-	<form class="form-inline mt-2 mt-md-0">
-		<input class="form-control mr-sm-2" type="text" placeholder="Escribe para buscar..." aria-label="Search">
-		<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-	</form>
-</div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	<div class="collapse navbar-collapse" id="navbarToggler">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Sobre mí</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contacto</a>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="search" placeholder="Escribe para buscar...">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+		</form>
+	</div>
+</nav>
 <!-- Termina Navegación
 ================================================== -->
+<?php if ( is_front_page() ) { ?>
 
-<div id="contenido" class="site-content"> <!-- Empieza .site-content -->
+<div id="contenido-home" class="site-content"> <!-- Empieza .site-content -->
+
+<?php } else { ?>
+
+<div id="contenido-post" class="site-content"> <!-- Empieza .site-content -->
+
+<?php } ?>

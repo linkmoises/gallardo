@@ -17,7 +17,6 @@
 </footer>
 <!-- Termina Pie
 ================================================== -->
-
 </div> <!-- Cierra .site-content -->
 
 <!-- Scripts
@@ -25,5 +24,6 @@
 <script src=<?php bloginfo("template_url"); ?>/js/jquery.min.js"></script>
 <script src="<?php bloginfo("template_url"); ?>/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo("template_url"); ?>/js/ie10-viewport-bug-workaround.js"></script>
+<?php wp_footer(); ?>
 </body>
 </html>
