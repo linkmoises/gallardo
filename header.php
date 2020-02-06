@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title><?php wp_title(); ?></title>
+	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/bootstrap.min.css">
 	<link href="<?php bloginfo("template_url"); ?>/css/screen.css" rel="stylesheet">
 	<link href="<?php bloginfo("template_url"); ?>/css/main.css" rel="stylesheet">

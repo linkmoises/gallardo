@@ -49,7 +49,7 @@
 			</div>
 
 			<!-- Begin Featured Image -->
-			<img class="featured-image img-fluid" src="assets/img/demopic/10.jpg" alt="">
+			<img class="featured-image img-fluid" src="<?php bloginfo("template_url"); ?>/assets/img/demopic/10.jpg" alt="">
 			<!-- End Featured Image -->
 
 			<!-- Begin Post Content -->
