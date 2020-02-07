@@ -134,3 +134,40 @@ function gallo_posts_nav() {
 		echo "\t\t\t\t\t" . '</div>' . "\n";
 
 }
+
+//
+// Rewrite Base
+// Basado en una solución: https://wordpress.stackexchange.com/questions/57070/change-the-page-slug-in-pagination
+//
+function gallo_rewrite_rules() {
+	global $wp_rewrite;
+	// $wp_rewrite->author_base = $author_slug;
+	//  print_r($wp_rewrite);
+	$wp_rewrite->author_base		= 'autor';
+	$wp_rewrite->search_base		= 'buscar';
+	$wp_rewrite->comments_base		= 'comentarios';
+	$wp_rewrite->pagination_base	= 'pagina';
+	// para las categorías y etiquetas usar la administración de WordPress que permite cambiar la base
+	$wp_rewrite->flush_rules();
+}
+add_action('init', 'gallo_rewrite_rules');
+
+//
+// Tiempo de lectura estimado
+// Basado en: https://medium.com/@nadeem4uwebtech/how-to-add-reading-time-in-wordpress-without-using-plugin-d2e8af7b1239
+//
+function gallo_reading_time() {
+	$content = get_post_field( 'post_content', $post->ID );
+	$word_count = str_word_count( strip_tags( $content ) );
+	$readingtime = ceil($word_count / 200);
+	
+	if ($readingtime == 1) {
+		$timer = " min"; // singular
+	} else {
+		$timer = " min"; // plural
+	}
+	
+	$totalreadingtime = $readingtime . $timer;
+	return $totalreadingtime;
+	
+}

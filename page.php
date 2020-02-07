@@ -1,6 +1,6 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); } ?>
 <?php get_header(); ?>
-<!-- Begin Article
+<!-- Inicia página
 ================================================== -->
 <div class="container">
 	<div class="row">
@@ -27,7 +27,7 @@
 		</div>
 		<!-- End Fixed Left Share -->
 
-		<!-- Begin Post -->
+		<!-- Inicio Post -->
 		<div class="col-md-8 col-md-offset-2 col-xs-12">
 <?php if ( have_posts() ) : ?> 
 <?php while ( have_posts() ) : the_post(); ?>
@@ -40,42 +40,12 @@
 <?php endwhile;  
 endif; 
 ?>
-			<div class="mainheading">
-
-				<h1 class="posttitle">18 Things You Should Learn Before Moving Into a New Home</h1>
-
-			</div>
-
-			<!-- Begin Featured Image -->
-			<img class="featured-image img-fluid" src="<?php bloginfo("template_url"); ?>/assets/img/demopic/10.jpg" alt="">
-			<!-- End Featured Image -->
-
-			<!-- Begin Post Content -->
-			<div class="article-post">
-				<p>
-					Holy grail funding non-disclosure agreement advisor ramen bootstrapping ecosystem. Beta crowdfunding iteration assets business plan paradigm shift stealth mass market seed money rockstar niche market marketing buzz market.
-				</p>
-				<p>
-					Burn rate release facebook termsheet equity technology. Interaction design rockstar network effects handshake creative startup direct mailing. Technology influencer direct mailing deployment return on investment seed round.
-				</p>
-				<p>
-					 Termsheet business model canvas user experience churn rate low hanging fruit backing iteration buyer seed money. Virality release launch party channels validation learning curve paradigm shift hypotheses conversion. Stealth leverage freemium venture startup business-to-business accelerator market.
-				</p>
-				<blockquote>
-					Gen-z strategy long tail churn rate seed money channels user experience incubator startup partner network low hanging fruit direct mailing. Client backing success startup assets responsive web design burn rate A/B testing metrics first mover advantage conversion.
-				</blockquote>
-				<p>
-					Freemium non-disclosure agreement lean startup bootstrapping holy grail ramen MVP iteration accelerator. Strategy market ramen leverage paradigm shift seed round entrepreneur crowdfunding social proof angel investor partner network virality.
-				</p>
-			</div>
-			<!-- End Post Content -->
-
 		</div>
-		<!-- End Post -->
+		<!-- Fin Post -->
 
 	</div>
 </div>
-<!-- End Article
+<!-- Termina página
 ================================================== -->
 
 <div class="hideshare"></div>
