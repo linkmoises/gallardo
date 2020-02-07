@@ -65,6 +65,7 @@ function gallo_custom_menu() {
 
 //
 // Función de paginación
+// Basado en: https://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
 //
 function gallo_posts_nav() {
 
