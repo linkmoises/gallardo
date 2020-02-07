@@ -176,7 +176,7 @@ section.recent-posts {
     margin-bottom: 15px;
 }
 
-.author-thumb {
+.author-thumb, .wp-avatar {
     width: 40px;
     height: 40px;
     margin-right: 13px;
@@ -187,12 +187,12 @@ section.recent-posts {
     margin-bottom: 2rem;
 }
 
-.post-top-meta .author-thumb {
+.post-top-meta .author-thumb, .post-top-meta .wp-avatar {
     width: 72px;
     height: 72px;
 }
 
-.post-top-meta.authorpage .author-thumb {
+.post-top-meta.authorpage .author-thumb, .post-top-meta.authorpage .wp-avatar {
     margin-top: 40px;
 }
 
@@ -620,7 +620,7 @@ ul.tags li a:hover {
     font-size: 30px;
 }
 
-.post-top-meta.authorpage .author-thumb {
+.post-top-meta.authorpage .author-thumb, .post-top-meta.authorpage .wp-avatar {
     float: none;
 }
 

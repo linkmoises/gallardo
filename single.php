@@ -24,6 +24,7 @@
 					</li>
 				</ul>
 				<p><span class="post-read"><?php echo gallo_reading_time(); ?></span></p>
+				<p><span class="post-date"><?php echo get_the_date('j M Y', get_the_ID()) ?></span></p>
 			</div>
 		</div>
 		<!-- End Fixed Left Share -->
@@ -43,16 +44,15 @@
 <?php the_tags( '<ul class="tags">' . "\n" . '<li>', '</li>' . "\n" . '<li>', '</li>' . "\n" . '</ul>' . "\n" ); ?>
 			</div>
 			<!-- Fin Tags -->
-
+			<hr class="inter-meta" />
 			<!-- Inicio Meta -->
 			<div class="row post-top-meta">
 				<div class="col-md-2">
-					<a href="#"><img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy"></a>
+					<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 72 ); ?></a>
 				</div>
 				<div class="col-md-10">
-					<a class="link-dark" href="#">Moy</a><a href="#" class="btn follow">Follow</a>
-					<span class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b> theme that you're currently previewing. Developing professional premium themes, templates, plugins, scripts since 2012.</span>
-					<span class="post-date">22 July 2017</span><span class="dot"></span>
+					<a class="link-dark" href="#">Moisés Serrano Samudio</a><a href="#" class="btn follow"><i class="far fa-address-card"></i> Follow</a>
+					<span class="author-description">Médico de atención primaria, fotógrafo aficionado, apasionado de las tecnologías relacionadas con el EdTech y el eHealth y diseñador/desarrollador de sitios web de salud.</span>
 				</div>
 			</div>
 			<!-- Fin Meta -->
