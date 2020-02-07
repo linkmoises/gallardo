@@ -141,12 +141,7 @@
 			<div class="bottompagination">
 				<div class="pointerup"><i class="fa fa-caret-up"></i></div>
 				<span class="navigation" role="navigation">
-					<div class="pagination">
-						<span>&laquo; Prev</span>
-						<span class="ml-1 mr-1">1</span>
-						<a class="ml-1 mr-1" href="#">2</a>
-						<a class="ml-1 mr-1" href="#">Next &raquo;</a>
-					</div>
+<?php gallo_posts_nav(); ?>
 				</span>
 			</div>
 <!-- Fin Paginación

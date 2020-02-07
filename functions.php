@@ -95,41 +95,41 @@ function gallo_posts_nav() {
 		$links[] = $paged + 1;
 	}
 
-	echo '<div class="navigation"><ul>' . "\n";
+	echo "\t\t\t\t\t" . '<div class="pagination">' . "\n";
 
 	/** Previous Post Link */
 	if ( get_previous_posts_link() )
-		printf( '<li>%s</li>' . "\n", get_previous_posts_link() );
+		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">%s</span>' . "\n", get_previous_posts_link() );
 
 	/** Link to first page, plus ellipses if necessary */
 	if ( ! in_array( 1, $links ) ) {
-		$class = 1 == $paged ? ' class="active"' : '';
+		$class = 1 == $paged ? ' active ' : '';
 
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1 %s"><a href="%s">%s</a></span>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
 
 		if ( ! in_array( 2, $links ) )
-		echo '<li>…</li>';
+		echo "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">…</span>' . "\n";
 	}
 
 	/** Link to current page, plus 2 pages in either direction if necessary */
 	sort( $links );
 	foreach ( (array) $links as $link ) {
-		$class = $paged == $link ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+		$class = $paged == $link ? ' active ' : '';
+		printf( "\t\t\t\t\t\t" . '<span class="%s ml-1 mr-1"><a href="%s">%s</a></span>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
 	}
 
 	/** Link to last page, plus ellipses if necessary */
 	if ( ! in_array( $max, $links ) ) {
 		if ( ! in_array( $max - 1, $links ) )
-		echo '<li>…</li>' . "\n";
+		echo "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">…</span>' . "\n";
 
-		$class = $paged == $max ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+		$class = $paged == $max ? ' active ' : '';
+		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1 %s"><a href="%s">%s</a></span>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
 	}
 
 	/** Next Post Link */
 	if ( get_next_posts_link() )
-		printf( '<li>%s</li>' . "\n", get_next_posts_link() );
-		echo '</ul></div>' . "\n";
+		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">%s</span>' . "\n", get_next_posts_link() );
+		echo "\t\t\t\t\t" . '</div>' . "\n";
 
 }
