@@ -70,18 +70,6 @@ endif;
 
 <div class="hideshare"></div>
 
-<!-- Begin Related
-================================================== -->
-<div class="graybg">
-	<div class="container">
-		<div class="section-title"><h2><span>Entradas relacionadas</span></h2></div>
-		<div class="row listrecent listrelated">
 <?php gallo_related_posts(array( 'limit' => 3 )); ?>
-		</div>
-	</div>
-</div>
-<!-- End Related Posts
-================================================== -->
-
 
 <?php get_footer(); ?>
