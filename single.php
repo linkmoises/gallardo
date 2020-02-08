@@ -25,6 +25,8 @@
 				</ul>
 				<p><span class="post-read"><?php echo gallo_reading_time(); ?></span></p>
 				<p><span class="post-date"><?php echo get_the_date('j M Y', get_the_ID()) ?></span></p>
+<?php edit_post_link( 'Editar', '<p>', '</p>' ); ?>
+
 			</div>
 		</div>
 		<!-- End Fixed Left Share -->
@@ -72,6 +74,7 @@ endif;
 ================================================== -->
 <div class="graybg">
 	<div class="container">
+		<div class="section-title"><h2><span>Entradas relacionadas</span></h2></div>
 		<div class="row listrecent listrelated">
 
 <!-- begin post -->
