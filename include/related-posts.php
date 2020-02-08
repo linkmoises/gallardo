@@ -11,7 +11,7 @@
 		setup_postdata($post); ?>
 <!-- inicia post -->
 			<div class="col-lg-4 col-md-6 mb-30px card-group">
-				<div class="card h-100">
+				<div class="card h-100 shadow">
 					<div class="maxthumb">
 						<a href="<?php the_permalink(); ?>">
 <?php the_post_thumbnail( 'large' , array( 'class' => 'img-fluid') ) ; ?>

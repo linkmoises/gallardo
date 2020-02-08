@@ -8,9 +8,7 @@
 		<!-- Begin Fixed Left Share -->
 		<div class="col-md-2 col-xs-12">
 			<div class="share">
-				<p>
-					Comparte
-				</p>
+				<p>Comparte</p>
 				<ul>
 					<li>
 					<a target="_blank" href="#">

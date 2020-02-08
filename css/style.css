@@ -40,3 +40,9 @@ hr.inter-meta {
 	margin-top: 0;
 	margin-bottom: 2rem;
 }
+
+.graybg {
+	box-shadow:
+		inset 0px 11px 8px -10px #CCC,
+		inset 0px -11px 8px -10px #CCC;
+}
