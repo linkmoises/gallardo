@@ -70,4 +70,9 @@ endif;
 
 <?php gallo_related_posts(array( 'limit' => 3 )); ?>
 
+<?php wp_reset_query();
+global $withcomments;
+$withcomments = 1;
+comments_template( '', true ); ?>
+
 <?php get_footer(); ?>
