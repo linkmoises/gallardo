@@ -8,7 +8,7 @@
 <?php endif; ?>
 <?php endif; ?>
 <?php if($comments) : ?>
-				<h2 class="comments-title">Titulo</h2>
+				<h2 class="comments-title">Comentarios</h2>
 				<ol class="comment-list">
 <?php foreach($comments as $comment) : ?>
 					<li id="comment-<?php comment_ID(); ?>" class="comment even thread-even depth-1">
@@ -35,7 +35,7 @@
 							<div class="comment-content">
 <?php comment_text(); ?>
 							</div><!-- .comment-content -->
-							<div class="reply"><a rel="nofollow" class="comment-reply-link" href="#" data-commentid="32" data-postid="111" data-belowelement="div-comment-32" data-respondelement="respond" aria-label="Reply to iya mas"><i class="fa fa-reply"></i></a></div>
+<?php edit_comment_link( '<i class="fas fa-edit"></i>', '<div class="reply">', '</div>' . "\n" ); ?>
 						</article><!-- .comment-body -->
 					</li>
 <?php endforeach; ?>
