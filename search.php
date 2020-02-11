@@ -18,6 +18,11 @@
 						<div class="card h-100">
 							<div class="card-body">
 								<h2 class="card-title"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<!-- Inicio Tags -->
+								<div class="after-post-tags">
+<?php the_tags( '<ul class="tags">' . "\n" . '<li>', '</li>' . "\n" . '<li>', '</li>' . "\n" . '</ul>' . "\n" ); ?>
+								</div>
+								<!-- Fin Tags -->
 								<p class="card-text"><?php the_excerpt(); ?></p>
 								<span><a href="<?php echo get_permalink(); ?>"><?php echo get_permalink(); ?></a></span>
 							</div>

@@ -59,6 +59,10 @@ hr.inter-meta {
 	margin-bottom: 0;
 }
 
+#search-results ul {
+	margin-bottom: 0.75rem;
+}
+
 /* 
 	Estilo de comentarios
 */
