@@ -91,7 +91,15 @@
 				</div><!-- cierra #respond -->
 <?php endif; ?>
 <?php else : ?>
-<p>Comentarios cerrados.</p>
+				<ol class="comment-list">
+					<li id="comment-no" class="comment even thread-even depth-1">
+						<article>
+							<div class="comment-content">
+								<p><i class="fas fa-exclamation-triangle"></i> Comentarios cerrados...</p>
+							</div>
+						</article>
+					</li>
+				</ol>
 <?php endif; ?>
 			</div><!-- cierra #comments -->
 		</div>
