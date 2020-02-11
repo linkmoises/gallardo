@@ -47,6 +47,18 @@ hr.inter-meta {
 		inset 0px -11px 8px -10px #CCC;
 }
 
+#search-results strong {
+	background-color: yellow;
+}
+
+#search-results .card-body {
+	padding-bottom: 0;
+} 
+
+#search-results p {
+	margin-bottom: 0;
+}
+
 /* 
 	Estilo de comentarios
 */

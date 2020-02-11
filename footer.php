@@ -2,18 +2,18 @@
 <!-- Empieza Pie
 ================================================== -->
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                Algunos derechos reservados 2017 - <?php echo date("Y"); ?>. Funciona con WordPress.
-            </div>
-            <div id="socialicons" class="col-md-6 col-sm-6 text-center text-lg-right">
-                <a target="_blank" href="#"><i class="fab fa-facebook-square"></i></a>
-                <a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="#"><i class="fab fa-twitter-square"></i></a>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 text-center text-lg-left">
+				Algunos derechos reservados 2017 - <?php echo date("Y"); ?>. Funciona con WordPress.
+			</div>
+			<div id="socialicons" class="col-md-6 col-sm-6 text-center text-lg-right">
+				<a target="_blank" href="#"><i class="fab fa-facebook-square"></i></a>
+				<a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
+				<a target="_blank" href="#"><i class="fab fa-twitter-square"></i></a>
+			</div>
+		</div>
+	</div>
 </footer>
 <!-- Termina Pie
 ================================================== -->
