@@ -9,6 +9,7 @@
 <!-- Todos los posts
 ================================================== -->
 			<section class="recent-posts">
+			<!--<p class="font400">En esta categoría encontrarás trucos, tutoriales y consejos sobre WordPress yo todo lo relacionado con este gestor de contenidos. Escribimos artículos para todos los niveles, de básico hasta avanzado sobre cómo trabajar de forma inteligente con WordPress, creando sitios webs eficaces, rápidos, escalables y con buen posicionameinto SEO. Encontrarás igualmente recomendaciones y guías sobre plantillas, plugins y recursos listos para usar.</p>-->
 <?php the_archive_title( '<div class="section-title"><h2><span>', '</span></h2></div>' ); ?>
 				<div class="row listrecent"> <!-- inicio fila recientes -->
 
