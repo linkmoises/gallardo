@@ -167,7 +167,7 @@ ol.children {
 	padding:20px;
 	position:relative;
 }
-.comment-form input.submit {
+.comment-form input.submit, input.wpcf7-submit {
 	background-color:#1C9963;
 	border-color:#1C9963;
 	color:rgba(255,255,255,1);
