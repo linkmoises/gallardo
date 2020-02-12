@@ -18,10 +18,14 @@
 <!-- Navegación
 ================================================== -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
-	<a class="navbar-brand my-0 mr-md-auto"><img src="<?php bloginfo("template_url"); ?>/assets/img/logo.png" width="40%"/></a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+	<a class="navbar-brand">
+		<div class="logo-image">
+			<img class="img-fluid" src="<?php bloginfo("template_url"); ?>/assets/img/logo.png"/>
+		</div>
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 	<div class="collapse navbar-collapse" id="navbarToggler">
 <?php if (function_exists( gallo_custom_menu() ) ) gallo_custom_menu(); ?>
 <?php get_search_form(); ?>
