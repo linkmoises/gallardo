@@ -11,7 +11,11 @@
 	<link href="<?php bloginfo("template_url"); ?>/css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/0f01975e5a.js" crossorigin="anonymous"></script>
+<!-- inicia wp_head()
+================================================== -->
 <?php wp_head(); ?>
+<!-- fin wp_head()
+================================================== -->
 </head>
 <body id="inicio" class="layout-default">
 

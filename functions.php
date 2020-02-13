@@ -232,6 +232,29 @@ function gallo_related_posts($args = array()) {
 }
 
 //
+// Posts destacados usando custom_field
+//
+function register_post_assets(){
+	add_meta_box('featured-post', __('Entradas destacadas'), 'add_featured_meta_box', 'post', 'advanced', 'high');
+}
+add_action('admin_init', 'register_post_assets', 1);
+
+function add_featured_meta_box($post){
+	$featured = get_post_meta($post->ID, '_featured-post', true);
+	echo "<label for='_featured-post'>¿Destacar esta entrada? </label>";
+	echo "<input type='checkbox' name='_featured-post' id='featured-post' value='1' ".checked(1, $featured)." />";
+}
+
+function save_featured_meta($post_id){
+	// Do validation here for post_type, nonces, autosave, etc...
+	if (isset($_REQUEST['_featured-post']))
+	update_post_meta(esc_attr($post_id, '_featured-post', esc_attr($_REQUEST['_featured-post']))); 
+	// I like using _ before my custom fields, so they are only editable within my form rather than the normal custom fields UI
+}
+add_action('save_post', 'save_featured_meta');
+
+
+//
 // Limpia head del sitio
 // https://gist.github.com/pedro-vasconcelos/ee96c1dd3907a0fdf125ef63c353c5f7
 //

@@ -24,6 +24,11 @@
 <script src=<?php bloginfo("template_url"); ?>/js/jquery.min.js"></script>
 <script src="<?php bloginfo("template_url"); ?>/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo("template_url"); ?>/js/ie10-viewport-bug-workaround.js"></script>
+<!-- <?php echo get_num_queries(); ?> consultas, carga completa en <?php timer_stop(1); ?> s.-->
+<!-- inicia wp_footer()
+================================================== -->
 <?php wp_footer(); ?>
+<!-- fin wp_footer()
+================================================== -->
 </body>
 </html>
