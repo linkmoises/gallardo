@@ -36,6 +36,7 @@ $featured_loop = new WP_Query(
 				<div class="section-title"><h2><span>Más visitados</span></h2></div>
 				<div class="row"><!-- inicio fila -->
 <?php while ( $featured_loop->have_posts() ) : $featured_loop->the_post(); ?>
+<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');?>
 					<!-- inicio post -->
 					<div class="col-md-6 mb-30px">
 						<div class="listfeaturedtag h-100">
@@ -43,7 +44,7 @@ $featured_loop = new WP_Query(
 								<div class="col-12 col-md-12 col-lg-5 pr-lg-0">
 									<div class="h-100">
 										<div class="wrapthumbnail">
-											<a href="#"><img class="featured-box-img-cover" src="http://via.placeholder.com/750x500"></a>
+											<a href="<?php the_permalink(); ?>"><img class="featured-box-img-cover" src="<?php echo $featured_img_url; ?>" alt="<?php the_title(); ?>" /></a>
 										</div>
 									</div>
 								</div>
@@ -51,19 +52,23 @@ $featured_loop = new WP_Query(
 									<div class="h-100 card-group">
 										<div class="card">
 											<div class="card-body">
-												<h2 class="card-title"><?php the_title(); ?></h2>
-												<h4 class="card-text">Director Roland Suso Richter’s enigmatic psychological thriller (direct to video/DVD) was based upon screenwriter Michael Cooney’s own play “Point of Death” - a title that...</h4>
+												<h2 class="card-title"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+												<h4 class="card-text"><?php the_excerpt(); ?></h4>
 											</div>
 											<div class="card-footer b-0 bg-white mt-auto">
-												<div class="wrapfooter">
-													<span class="meta-footer-thumb"><img class="author-thumb" src="https://0.gravatar.com/avatar/f5b8708b8db2369736d0bbe660cbdd47?s=400&d=mm" alt="Moy"></span>
-													<span class="author-meta">
-														<span class="post-name"><a target="_blank" href="#">Moy</a></span><br/>
-														<span class="post-date">11 Jan 2018</span>
-													</span>
-													<span class="post-read-more"><a href="#" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
-													<div class="clearfix"></div>
-												</div>
+								<div class="wrapfooter">
+									<span class="meta-footer-thumb">
+										<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 72 ); ?></a>
+									</span>
+									<span class="author-meta">
+										<span class="post-name"><a target="_blank" href="#"><?php the_author(); ?></a></span><br/>
+										<span class="post-date"><?php echo get_the_date('j M Y'); ?></span>
+										<span class="dot"></span>
+										<span class="post-read"><?php echo gallo_reading_time(); ?></span>
+									</span>
+									<span class="post-read-more"><a href="<?php the_permalink(); ?>" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
+									<div class="clearfix"></div>
+								</div>
 											</div>
 										</div>
 									</div>
@@ -77,7 +82,7 @@ $featured_loop = new WP_Query(
 			</section>
 <?php endif; ?>
 <?php wp_reset_query(); ?>
-
+<!-- intermezzo -->
 <?php
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $home_loop = new WP_Query(
@@ -97,11 +102,12 @@ $home_loop = new WP_Query(
 				<div class="section-title"><h2><span>Todas las historias</span></h2></div>
 				<div class="row listrecent"> <!-- inicio fila recientes -->
 <?php while ( $home_loop->have_posts() ) : $home_loop->the_post(); ?>
+<?php $home_img_url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');?>
 					<!-- inicio post -->
 					<div id="post-<?php the_ID(); ?>" class="col-lg-4 col-md-6 mb-30px card-group">
 						<div class="card h-100">
 							<div class="maxthumb">
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' , array( 'class' => 'img-fluid') ) ; ?></a>
+								<a href="<?php the_permalink(); ?>"><img class="img-fluid" src="<?php echo $home_img_url; ?>" alt="<?php the_title(); ?>" /></a>
 							</div>
 							<div class="card-body">
 								<h2 class="card-title"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

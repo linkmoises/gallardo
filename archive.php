@@ -14,11 +14,12 @@
 				<div class="row listrecent"> <!-- inicio fila recientes -->
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php $archive_img_url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');?>
 					<!-- inicio post -->
 					<div id="post-<?php the_ID(); ?>" class="col-lg-4 col-md-6 mb-30px card-group">
 						<div class="card h-100">
 							<div class="maxthumb">
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' , array( 'class' => 'img-fluid') ) ; ?></a>
+								<a href="<?php the_permalink(); ?>"><img class="img-fluid" src="<?php echo $archive_img_url; ?>" alt="<?php the_title(); ?>" /></a>
 							</div>
 							<div class="card-body">
 								<h2 class="card-title"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
