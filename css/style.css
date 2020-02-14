@@ -1,5 +1,9 @@
-footer #socialicons {
-	font-size: 1.5em;
+#footer-links {
+	margin: 1.5rem;
+}
+
+#footer-text {
+ 	line-height: 1.7rem;
 }
 
 .post-read-more i {
@@ -80,6 +84,37 @@ hr.inter-meta {
 .share li {
 	padding: 0 1rem; 
 }
+
+#mediumdark { 
+	background: rgba(0, 0, 0, 0.9);
+	color: rgba(255, 255, 255, 0.7);
+	margin-top: 3rem;
+}
+
+#mediumdark a {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+#mediumdark a:hover {
+	color: #fff;
+}
+
+#mediumdark hr.inter-meta {
+	background: rgba(255, 255, 255, 0.5);
+	margin: 0 15%;
+}
+
+#mediumdark .footer-copyright {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+#footer-links i {
+	margin: 0 0.5rem;
+}
+
+/* 
+	Estilos wpcf7
+*/
 
 .wpcf7-form-control {
 	display: block;

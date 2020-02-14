@@ -173,6 +173,19 @@ function gallo_reading_time() {
 }
 
 //
+// Derivada del random_404() de telmeds
+//
+function gallo_cita_random() {
+$vector = array(
+	1 => "Es posible robar las ideas, pero nadie puede robar su puesta en práctica ni la pasión por ellas. (Timothy Ferriss).",
+	2 => "La medicina es una ciencia de la incertidumbre y un arte de la probabilidad. (William Osler).",
+	3 => "La medicina es el arte de disputar los hombres a la muerte de hoy, para cedérselos en mejor estado, un poco más tarde. (Noel Clarasó)",
+);
+$numero = rand(1,3);
+echo "$vector[$numero]";
+}
+
+//
 // Retorna solamente 6 tags en the_tags(), pero lo afecta globalmente
 //
 //add_filter('term_links-post_tag','limit_to_five_tags');
