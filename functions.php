@@ -1,4 +1,8 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); } 
+//
+// Archivos a incluir
+//
+include_once('include/seo.php');
 
 //
 // Imágenes destacadas
