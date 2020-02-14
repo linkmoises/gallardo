@@ -104,7 +104,18 @@
 				<div class="section-title"><h2><span>Todas las historias</span></h2></div>
 				<div class="row listrecent"> <!-- inicio fila recientes -->
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php
+$home_loop = new WP_Query(
+	array(
+		'post_type' => 'post',
+		'posts_per_page' => 6,
+		//'order' => 'ASC',
+		//'orderby' => 'name'
+	)
+);
+?>
+<?php if ( $home_loop->have_posts() ) { ?>
+<?php while ( $home_loop->have_posts() ) : $home_loop->the_post(); ?>
 					<!-- inicio post -->
 					<div id="post-<?php the_ID(); ?>" class="col-lg-4 col-md-6 mb-30px card-group">
 						<div class="card h-100">
@@ -134,7 +145,7 @@
 					</div>
 					<!-- end post -->
 <?php endwhile; ?>
-<?php endif; ?>
+<?php } ?>
 				</div> <!-- fin fila recientes -->
 			</section>
 
