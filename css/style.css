@@ -1,31 +1,6 @@
-#footer-links {
-	margin: 1.5rem;
-}
-
-#footer-text {
- 	line-height: 1.7rem;
-}
-
-.post-read-more i {
-	font-size: 1.5em;
-}
-
-.post-read-more i:hover {
-	color: #28a745;
-}
-
-.card-tags ul.tags {
-	margin: 0 20px !important;
-}
-
-.card-tags a {
-	padding: 2px 4px;
-}
-
-.card-tags li {
-	height: 30px;
-}
-
+/* 
+	Estilos home y paginación
+*/
 #jumbohome {
 	background: url("../img/jumbotron.jpg") top center !important;
 	background-size: cover;
@@ -40,33 +15,10 @@
 	color: rgba(0,0,0,.3);
 }
 
-hr.inter-meta {
-	margin-top: 0;
-	margin-bottom: 2rem;
-}
 
-.graybg {
-	box-shadow:
-		inset 0px 11px 8px -10px #CCC,
-		inset 0px -11px 8px -10px #CCC;
-}
-
-#search-results strong {
-	background-color: yellow;
-}
-
-#search-results .card-body {
-	padding-bottom: 0;
-} 
-
-#search-results p {
-	margin-bottom: 0;
-}
-
-#search-results ul {
-	margin-bottom: 0.75rem;
-}
-
+/* 
+	Estilos header
+*/
 .logo-image{
 	width: 190px;
 	height: 35px;
@@ -81,8 +33,16 @@ hr.inter-meta {
 	margin-right: 1rem;
 }
 
-.share li {
-	padding: 0 1rem; 
+
+/* 
+	Estilos footer
+*/
+#footer-links {
+	margin: 1.5rem;
+}
+
+#footer-text {
+ 	line-height: 1.7rem;
 }
 
 #mediumdark { 
@@ -111,6 +71,65 @@ hr.inter-meta {
 #footer-links i {
 	margin: 0 0.5rem;
 }
+
+
+/* 
+	Estilos post
+*/
+.post-read-more i {
+	font-size: 1.5em;
+}
+
+.post-read-more i:hover {
+	color: #28a745;
+}
+
+.card-tags ul.tags {
+	margin: 0 20px !important;
+}
+
+.card-tags a {
+	padding: 2px 4px;
+}
+
+.card-tags li {
+	height: 30px;
+}
+
+hr.inter-meta {
+	margin-top: 0;
+	margin-bottom: 2rem;
+}
+
+.graybg {
+	box-shadow:
+		inset 0px 11px 8px -10px #CCC,
+		inset 0px -11px 8px -10px #CCC;
+}
+
+.share li {
+	padding: 0 1rem; 
+}
+
+/* 
+	Estilos búsqueda
+*/
+#search-results strong {
+	background-color: yellow;
+}
+
+#search-results .card-body {
+	padding-bottom: 0;
+} 
+
+#search-results p {
+	margin-bottom: 0;
+}
+
+#search-results ul {
+	margin-bottom: 0.75rem;
+}
+
 
 /* 
 	Estilos wpcf7
