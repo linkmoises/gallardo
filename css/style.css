@@ -2,8 +2,9 @@
 	Estilos home y paginación
 */
 #jumbohome {
-	background: url("../img/jumbotron.jpg") top center !important;
+	background: url("../img/jumbotron.jpg") no-repeat center center !important;
 	background-size: cover;
+	height: 100%;
 	text-shadow: 1px 1px 2px #333;
 }
 
@@ -13,6 +14,29 @@
 
 .pagination span.active a {
 	color: rgba(0,0,0,.3);
+}
+
+/*
+	Estilos imagenes
+*/
+figure img {
+	width: 100%;
+	height: auto;
+}
+
+figure figcaption {
+	box-shadow:
+		inset 0px 11px 8px -10px #CCC;
+	text-align: center;
+	font-size: 0.9rem;
+}
+
+.wp-block-image figcaption {
+	color: #777777;
+	margin-top: 0 !important;
+	margin-bottom: 2em !important;
+	font-family: sans-serif !important;
+	padding-top: 1em !important;
 }
 
 
