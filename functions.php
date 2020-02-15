@@ -5,6 +5,12 @@
 include_once('include/seo.php');
 
 //
+// Elimina CSS de la barra de wp
+//
+//
+add_filter('show_admin_bar', '__return_false');
+
+//
 // Imágenes destacadas
 //
 add_theme_support( 'post-thumbnails' ); 
@@ -25,19 +31,19 @@ remove_filter ('the_excerpt', 'wpautop');
 //
 // Cambio de posición de barra de WordPress
 //
-function gallo_bottom_admin_bar() {
-echo '
-<style type="text/css">
-div#wpadminbar { top: auto; bottom: 0; position: fixed; }
-.ab-sub-wrapper { bottom: 32px; }
-html[lang] { margin-top: 0 !important; margin-bottom: 32px !important; }
-@media screen and (max-width: 782px){
-.ab-sub-wrapper { bottom: 46px; }
-html[lang] { margin-bottom: 46px !important; }
-}
-</style>'; 
-}
-add_action('wp_head', 'gallo_bottom_admin_bar', 100);
+// function gallo_bottom_admin_bar() {
+// echo '
+// <style type="text/css">
+// div#wpadminbar { top: auto; bottom: 0; position: fixed; }
+// .ab-sub-wrapper { bottom: 32px; }
+// html[lang] { margin-top: 0 !important; margin-bottom: 32px !important; }
+// @media screen and (max-width: 782px){
+// .ab-sub-wrapper { bottom: 46px; }
+// html[lang] { margin-bottom: 46px !important; }
+// }
+// </style>'; 
+// }
+// add_action('wp_head', 'gallo_bottom_admin_bar', 100);
 
 //
 // Registro de menús
