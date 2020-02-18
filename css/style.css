@@ -323,3 +323,6 @@ ol.children {
 	margin-top:20px;
 	margin-bottom:20px;
 }
+.comment-content p {
+	line-height: 1.84;
+}
