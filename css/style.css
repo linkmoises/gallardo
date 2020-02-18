@@ -78,7 +78,7 @@ table.tablepress {
 
 @media (min-width: 991px) and (max-width: 1065px) {
 	.navbar-light .navbar-nav .nav-link {
-		font-size: 0.9rem;
+		font-size: 0.8rem !important;
 	}
 }
 
@@ -131,6 +131,15 @@ table.tablepress {
 
 .post-read-more i:hover {
 	color: #28a745;
+}
+
+.article-post a {
+	color: #a87d28;
+	transition: all 1s;
+}
+
+.article-post a:hover {
+	text-decoration: underline; 
 }
 
 .card-tags ul.tags {
