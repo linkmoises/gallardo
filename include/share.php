@@ -32,6 +32,7 @@
 <?php edit_post_link( 'Editar', '<p>', '</p>' ); ?>
 				</div>
 <?php } elseif ( is_page() ) { ?>
+<?php edit_post_link( 'Editar', '<p>', '</p>' ); ?>
 				<!--<p><span class="post-date"><?php echo get_the_date('j M Y', get_the_ID()) ?></span></p>-->
 <?php } ?>
 			</div>
