@@ -3,7 +3,10 @@
 */
 #jumbohome {
 	background: url("../img/jumbotron.jpg") no-repeat center center !important;
-	background-size: cover;
+	/*-webkit-background-size: cover;*/
+	/*-moz-background-size: cover;*/
+	/*background-size: cover;*/
+	/*-o-background-size: cover;*/
 	height: 100%;
 	text-shadow: 1px 1px 2px #333;
 }
@@ -37,6 +40,18 @@ figure figcaption {
 	margin-bottom: 2em !important;
 	font-family: sans-serif !important;
 	padding-top: 1em !important;
+}
+
+.wp-block-gallery figcaption {
+	font-family: sans-serif !important;
+}
+
+/*
+	Estilo tablepress
+*/
+table.tablepress {
+	font-family: sans-serif;
+	font-size: 0.9rem;
 }
 
 
