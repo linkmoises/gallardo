@@ -169,6 +169,16 @@ hr.inter-meta {
 	padding: 0 1rem; 
 }
 
+.btn.follow:hover {
+	background: #1C9963;
+	color: #fff;
+}
+
+.post-top-meta .author-thumb, .post-top-meta .wp-avatar {
+	width: 90px;
+	height: 90px;
+}
+
 /* 
 	Estilos búsqueda
 */
