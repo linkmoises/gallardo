@@ -72,6 +72,16 @@ table.tablepress {
 	margin-right: 1rem;
 }
 
+.navbar-light .navbar-nav .nav-link {
+	font-weight: 600;
+}
+
+@media (min-width: 991px) and (max-width: 1065px) {
+	.navbar-light .navbar-nav .nav-link {
+		font-size: 0.9rem;
+	}
+}
+
 
 /* 
 	Estilos footer
