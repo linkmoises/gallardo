@@ -5,32 +5,7 @@
 <div class="container">
 	<div class="row">
 
-		<!-- Begin Fixed Left Share -->
-		<div class="col-md-2 col-xs-12">
-			<div class="share">
-				<p>
-					Comparte
-				</p>
-				<ul>
-					<li>
-						<a target="_blank" href="#">
-							<i class="fab fa-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a target="_blank" href="#">
-							<i class="fab fa-facebook-f"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="fab fa-whatsapp"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- End Fixed Left Share -->
+<?php gallo_share(); ?>
 
 		<!-- Inicio Post -->
 		<div class="col-md-8 col-md-offset-2 col-xs-12">

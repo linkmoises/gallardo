@@ -254,6 +254,18 @@ function gallo_related_posts($args = array()) {
 	wp_reset_postdata();
 }
 
+
+//
+//Social media share buttons
+//
+function gallo_share() {
+	$url = urlencode(get_the_permalink());
+	$title = urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8'));
+	$media = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full'));
+
+include( locate_template('include/share.php', false, false) );
+}
+
 //
 // Limpia head del sitio
 // https://gist.github.com/pedro-vasconcelos/ee96c1dd3907a0fdf125ef63c353c5f7

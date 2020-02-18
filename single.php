@@ -5,49 +5,7 @@
 <div class="container">
 	<div class="row">
 
-		<!-- Begin Fixed Left Share -->
-		<div class="col-md-2 col-xs-12">
-			<div class="share">
-				<p>Comparte</p>
-				<ul>
-					<li>
-						<a target="_blank" href="#">
-							<i class="fab fa-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a target="_blank" href="#">
-							<i class="fab fa-facebook-f"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="fab fa-whatsapp"></i>
-						</a>
-					</li>
-				</ul>
-				<div class="d-none d-lg-block">
-				<div class="sep">
-				</div>
-				<p>
-					Comenta
-				</p>
-				<ul>
-					<li>
-						<a href="#comments">
-<?php echo get_comments_number($post->ID); ?> <i class="far fa-comments"></i>
-						</a>
-					</li>
-				</ul>
-				<div class="sep">
-				</div>
-				<p><span class="post-read"><?php echo gallo_reading_time(); ?></span></p>
-				<p><span class="post-date"><?php echo get_the_date('j M Y', get_the_ID()) ?></span></p>
-<?php edit_post_link( 'Editar', '<p>', '</p>' ); ?>
-				</div>
-			</div>
-		</div>
-		<!-- End Fixed Left Share -->
+<?php gallo_share(); ?>
 
 		<!-- Inicio Post -->
 		<div class="col-md-8 col-md-offset-2 col-xs-12">
