@@ -4,7 +4,7 @@
 
 <!-- Jumbotron
 ================================================== -->
-		<div id="jumbohome" class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+		<div id="jumbohome" class="jumbotron mb-30px p-4 p-md-5 text-white rounded bg-dark">
 			<div class="col-md-6 px-0">
 				<h1 class="display-4 font-italic">Bienvenido a mi blog personal</h1>
 				<p class="lead my-3">Desde aquí hablo un poco de EdTech, Linux, Redes, Seguridad y Medicina.</p>
