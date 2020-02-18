@@ -110,7 +110,7 @@ function gallo_posts_nav() {
 
 	/** Previous Post Link */
 	if ( get_previous_posts_link() )
-		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">%s</span>' . "\n", get_previous_posts_link() );
+		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">%s</span>' . "\n", get_previous_posts_link('Recientes') );
 
 	/** Link to first page, plus ellipses if necessary */
 	if ( ! in_array( 1, $links ) ) {
@@ -140,7 +140,7 @@ function gallo_posts_nav() {
 
 	/** Next Post Link */
 	if ( get_next_posts_link() )
-		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">%s</span>' . "\n", get_next_posts_link() );
+		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">%s</span>' . "\n", get_next_posts_link('Anteriores') );
 		echo "\t\t\t\t\t" . '</div>' . "\n";
 
 }
