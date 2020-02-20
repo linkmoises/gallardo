@@ -28,7 +28,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
 	<a class="navbar-brand">
 		<div class="logo-image">
-			<img class="img-fluid" src="<?php bloginfo("template_url"); ?>/assets/img/logo.png"/>
+			<img class="img-fluid" src="<?php bloginfo("template_url"); ?>/img/logo.png"/>
 		</div>
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
