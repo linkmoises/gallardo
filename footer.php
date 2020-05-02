@@ -26,7 +26,7 @@
 		</div>
 	</div>
 	<div class="footer-copyright text-center py-3">
-		<small><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> <i class="fab fa-creative-commons-sa"></i> Contenido bajo licencia <a target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a> 2017 - <?php echo date("Y"); ?>. Funciona con <a href="#">WordPress</a>. <?php if (is_user_logged_in()) : ?><a href="<?php echo admin_url(); ?>">Tablero</a>. <a href="<?php echo wp_logout_url(home_url()); ?>">Cerrar sesión</a><?php else : ?><a href="<?php echo wp_login_url(home_url()); ?>">Acceder</a><?php endif;?>.</small>
+		<small><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> <i class="fab fa-creative-commons-sa"></i> Contenido bajo licencia <a target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a> 2017 - <?php echo date("Y"); ?>. Funciona con <a href="#">WordPress</a>. <?php if (is_user_logged_in()) : ?><a href="<?php echo admin_url(); ?>">Tablero</a>. <a href="<?php echo admin_url(); ?>/post-new.php">Crear nueva entrada</a>. <a href="<?php echo wp_logout_url(home_url()); ?>">Cerrar sesión</a><?php else : ?><a href="<?php echo wp_login_url(home_url()); ?>">Acceder</a><?php endif;?>.</small>
 	</div>
 </footer>
 <!-- Termina Pie

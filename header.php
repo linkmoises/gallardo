@@ -26,7 +26,7 @@
 <!-- Navegación
 ================================================== -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
-	<a class="navbar-brand">
+	<a href="<?php bloginfo('url'); ?>" class="navbar-brand">
 		<div class="logo-image">
 			<img class="img-fluid" src="<?php bloginfo("template_url"); ?>/img/logo.png"/>
 		</div>
