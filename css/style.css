@@ -138,6 +138,10 @@ table.tablepress {
 	transition: all 1s;
 }
 
+.article-post a.btn {
+	color: #fff;
+}
+
 .article-post a:hover {
 	text-decoration: underline; 
 }
