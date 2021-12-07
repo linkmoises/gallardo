@@ -7,7 +7,7 @@
 		<div id="jumbohome" class="jumbotron mb-30px p-4 p-md-5 text-white rounded bg-dark">
 			<div class="col-md-6 px-0">
 				<h1 class="display-4 font-italic">Bienvenido a mi blog personal</h1>
-				<p class="lead my-3">Desde aquí hablo un poco de EdTech, Linux, Redes, Seguridad y Medicina.</p>
+				<p class="lead my-3">Desde aquí hablo un poco de EdTech, Thinkpads, LEGO, Linux, Redes, Seguridad y Medicina.</p>
 				<p class="lead mb-0"><a href="https://moisesserrano.com/sobre-mi/" class="text-white font-weight-bold">Conoce un poco más sobre lo que hago...</a></p>
 			</div>
 		</div>
