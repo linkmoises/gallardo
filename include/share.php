@@ -1,8 +1,7 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); } ?>
 		<!-- Begin Fixed Left Share -->
-		<div class="col-md-2 col-xs-12">
-			<div class="share">
-				<p>Comparte</p>
+		<div class="col-md-1 col-xs-12 mb-5">
+			<div class="share sticky-top sticky-offset">
 				<ul>
 					<li>
 						<a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>&amp;via=linkmoises"><i class="fab fa-twitter"></i></a>
@@ -20,7 +19,6 @@
 <?php if ( is_single() ) { ?>
 				<div class="d-none d-lg-block">
 					<div class="sep"></div>
-					<p>Comenta</p>
 					<ul>
 						<li>
 							<a href="#comments"><?php echo get_comments_number($post->ID); ?> <i class="far fa-comments"></i></a>

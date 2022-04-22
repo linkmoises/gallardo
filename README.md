@@ -1,10 +1,7 @@
 # Gallardo
 
-Esta es una plantilla HTML5 en evolución
-hacia plantilla de WordPress. Gallardo
-será una plantilla con un diseño al estilo
-de Medium. Limpio, claro, legible, adaptativo
-y minimalista. Basado en Bootstrap 4.
+Esta es una plantilla que se basa en el diseño de Medium.com
+y DEV.to. Tiene un diseño limpio y ligero.
 
 ## Empezando
 
