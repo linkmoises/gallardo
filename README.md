@@ -1,7 +1,7 @@
 # Gallardo
 
 Esta es una plantilla que se basa en el diseño de Medium.com
-y DEV.to. Tiene un diseño limpio y ligero.
+y DEV.to. Tiene un diseño limpio y ligero y visualmente agradable.
 
 ## Empezando
 
@@ -20,7 +20,7 @@ directorio de plantillas de WordPress.
 	git clone https://github.com/linkmoises/gallardo.git
 
 Si clonaste el repositorio como usuario root o 
-usuario normal, solo es cuestión de cambiar los 
+usuario normal por error, solo es cuestión de cambiar los 
 permisos.
 
 	chown -R www-data:www-data <directoriowp>/wp-content/themes
