@@ -9,17 +9,17 @@
 
 		<!-- Inicio Post -->
 		<div class="gallardo-post pt-3 px-5 mb-5 col-md-8 col-md-offset-2 col-xs-12">
+<?php if ( have_posts() ) : ?>
+<?php while ( have_posts() ) : the_post(); ?>
+			<div class="mainheading">
+				<h1 class="posttitle"><?php the_title(); ?></h1>
+			</div>
 			<!-- Inicio Tags -->
 			<div class="after-post-tags">
 <?php the_tags( '<ul class="tags">' . "\n" . '<li>', '</li>' . "\n" . '<li>', '</li>' . "\n" . '</ul>' . "\n" ); ?>
 			</div>
 			<!-- Fin Tags -->
-<?php if ( have_posts() ) : ?> 
-<?php while ( have_posts() ) : the_post(); ?>
-			<div class="mainheading">
-				<h1 class="posttitle"><?php the_title(); ?></h1>
-			</div>
-			<div class="article-post"> 
+			<div class="article-post">
 <?php the_content(); ?>
 			</div>
 			<!-- Inicio Tags -->
@@ -40,12 +40,12 @@
 				</div>
 			</div>
 			<!-- Fin Meta -->
-<?php endwhile;  
-endif; 
+<?php endwhile;
+endif;
 ?>
 		</div>
 		<!-- Fin Post -->
-		
+
 		<!-- Inicio Meta Autor -->
 		<div class="col-md-3 col-xs-12 mb-5">
 			<div id="gallardo-profile" class="profile-card text-center sticky-top sticky-offset">
@@ -64,7 +64,7 @@ endif;
 			</div>
 		</div>
 		<!-- Fin Meta Autor -->
-		
+
 	</div>
 </div>
 <!-- Termina página
