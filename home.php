@@ -1,6 +1,6 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); } ?>
 <?php get_header(); ?>
-	<div class="container"> <!-- Inicia .container (coloca al centro la estructura de la página) -->
+	<div class="container-fluid"> <!-- Inicia .container (coloca al centro la estructura de la página) -->
 
 <!-- Jumbotron
 ================================================== -->
