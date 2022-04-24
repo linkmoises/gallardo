@@ -1,4 +1,4 @@
-/* 
+/*
 	Estilos home y paginación
 */
 #inicio {
@@ -24,7 +24,11 @@
 }
 
 .sticky-offset {
-    top: 80px;
+  top: 80px;
+}
+
+.meta-footer-thumb img {
+	margin-right: 5px;
 }
 
 /*
@@ -69,7 +73,7 @@ table.tablepress {
 }
 
 
-/* 
+/*
 	Estilos header
 */
 .logo-image{
@@ -97,7 +101,7 @@ table.tablepress {
 }
 
 
-/* 
+/*
 	Estilos footer
 */
 #footer-links {
@@ -108,7 +112,7 @@ table.tablepress {
  	line-height: 1.7rem;
 }
 
-#mediumdark { 
+#mediumdark {
 	background: rgba(0, 0, 0, 0.9);
 	color: rgba(255, 255, 255, 0.7);
 	margin-top: 3rem;
@@ -136,7 +140,7 @@ table.tablepress {
 }
 
 
-/* 
+/*
 	Estilos post
 */
 .post-read-more i {
@@ -157,7 +161,7 @@ table.tablepress {
 }
 
 .article-post a:hover {
-	text-decoration: underline; 
+	text-decoration: underline;
 }
 
 .card-tags ul.tags {
@@ -184,7 +188,7 @@ hr.inter-meta {
 }
 
 .share li {
-	padding: 0 1rem; 
+	padding: 0 1rem;
 }
 
 .btn.follow:hover {
@@ -257,7 +261,7 @@ hr.inter-meta {
 }
 
 
-/* 
+/*
 	Estilos búsqueda
 */
 #search-results strong {
@@ -266,7 +270,7 @@ hr.inter-meta {
 
 #search-results .card-body {
 	padding-bottom: 0;
-} 
+}
 
 #search-results p {
 	margin-bottom: 0;
@@ -277,7 +281,7 @@ hr.inter-meta {
 }
 
 
-/* 
+/*
 	Estilos wpcf7
 */
 
@@ -293,7 +297,7 @@ hr.inter-meta {
 	border: 1px solid #ced4da;
 	border-radius: .25rem;
 	width: 100%;
-	transition: 
+	transition:
 		border-color .15s ease-in-out,
 		box-shadow .15s ease-in-out;
 }
@@ -306,7 +310,7 @@ hr.inter-meta {
 	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
 
-/* 
+/*
 	Estilo de comentarios
 */
 h2.comments-title,h3.comment-reply-title {
