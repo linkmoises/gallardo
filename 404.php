@@ -12,29 +12,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="hamburger-menu">
-  <button class="burger" data-state="closed">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</div>
-<nav data-state="closed">
-  <ul>
-  <li>
-    <a href="#">Home</a>
-  </li>
-  <li>
-    <a href="#">Services</a>
-  </li>
-  <li>
-    <a href="#">About</a>
-  </li>
-  <li>
-    <a href="#">Contact</a>
-  </li>
-  </ul>
-</nav>
+
 <main>
   <div class="container">
     <div class="row">
