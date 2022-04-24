@@ -24,7 +24,7 @@
 						<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 							<footer class="comment-meta">
 								<div class="comment-author vcard">
-									<?php echo get_avatar($author_email, 36 ); ?>
+									<?php echo get_avatar($comment, 36 ); ?>
 									<b class="fn"><?php comment_author_link(); ?></b> <span class="says">dice:</span>
 								</div><!-- .comment-author -->
 
