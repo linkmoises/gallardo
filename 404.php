@@ -278,7 +278,7 @@
           Como llegaste aquí, es un misterio. Pero puedes dar click al botón
           de abajo para volver a la página principal
         </p>
-        <button class="btn green">HOME</button>
+        <button class="btn green">Inicio</button>
       </div>
     </div>
   </div>
