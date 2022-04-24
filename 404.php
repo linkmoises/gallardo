@@ -307,6 +307,6 @@
 </main>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js'></script>
-	<script  src="<?php bloginfo("template_url"); ?>/js/script.js"></script>
+	<script  src="<?php bloginfo("template_url"); ?>/js/404.js"></script>
 </body>
 </html>
