@@ -58,7 +58,7 @@ $featured_loop = new WP_Query(
 											<div class="card-footer b-0 bg-white mt-auto">
 												<div class="wrapfooter">
 													<span class="meta-footer-thumb">
-														<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 40 ); ?></a>
+														<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), '48', $default, $alt, array( 'class' => array( 'rounded-circle', 'mr-2' ) ) ); ?></a>
 													</span>
 													<span class="author-meta">
 														<span class="post-name"><a target="_blank" href="#"><?php the_author(); ?></a></span><br/>
@@ -116,7 +116,7 @@ $home_loop = new WP_Query(
 							<div class="card-footer bg-white">
 								<div class="wrapfooter">
 									<span class="meta-footer-thumb">
-										<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 40 ); ?></a>
+										<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), '48', $default, $alt, array( 'class' => array( 'rounded-circle', 'mr-2' ) ) ); ?></a>
 									</span>
 									<span class="author-meta">
 										<span class="post-name"><a target="_blank" href="#"><?php the_author(); ?></a></span><br/>
