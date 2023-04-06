@@ -197,6 +197,27 @@ hr.inter-meta {
 	height: 90px;
 }
 
+.profile-author img {
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+    margin: 10px 10px 10px auto;
+    border-radius: 50%;
+    transition: all linear 0.25s;
+}
+
+#gallardo-1020 table, #gallardo-1020 td {
+	border: 1px solid #fff !important;
+	vertical-align: top !important;
+}
+
+#gallardo-certif img {
+	border-radius: 0;
+	width: 100%;
+	height: 100%;
+	transition: none;
+}
+
 /*
 	Tarjeta de contacto
 */

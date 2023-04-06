@@ -9,11 +9,6 @@
 
 		<!-- Inicio Post -->
 		<div class="gallardo-post pt-3 px-5 mb-5 col-md-8 col-md-offset-2 col-xs-12">
-			<!-- Inicio Tags -->
-			<div class="after-post-tags">
-<?php the_tags( '<ul class="tags">' . "\n" . '<li>', '</li>' . "\n" . '<li>', '</li>' . "\n" . '</ul>' . "\n" ); ?>
-			</div>
-			<!-- Fin Tags -->
 <?php if ( have_posts() ) : ?> 
 <?php while ( have_posts() ) : the_post(); ?>
 			<div class="mainheading">
@@ -31,7 +26,7 @@
 			<!-- Inicio Meta -->
 			<div class="row post-top-meta">
 				<div class="col-4 col-sm-3 col-md-2 text-center">
-					<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 90 ); ?></a>
+					<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 90, $default, $alt, array( 'class' => array( 'img', 'img-rounded' ) ) ); ?></a>
 				</div>
 				<div class="col-8 col-sm-9 col-md-10">
 					<a class="link-dark" href="#">Moisés Serrano Samudio</a><a href="#" class="btn follow"><i class="fab fa-twitter"></i> Seguir</a>
@@ -49,7 +44,7 @@ endif;
 		<!-- Inicio Meta Autor -->
 		<div class="col-md-3 col-xs-12 mb-5">
 			<div id="gallardo-profile" class="profile-card text-center sticky-top sticky-offset">
-				<img src="https://www.moisesserrano.com/core/wp-content/uploads/2019/09/linkmoises-square-90x90.jpg" class="img img-responsive">
+				<img src="https://www.moisesserrano.com/core/wp-content/uploads/2019/09/linkmoises-square-90x90.jpg" class="img img-rounded img-responsive">
 				<div class="profile-content">
 				<div class="profile-name">Moisés Serrano Samudio
 					<p>@linkmoises</p>
