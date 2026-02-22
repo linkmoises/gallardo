@@ -1,332 +1,198 @@
-<?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); } 
-//
-// Archivos a incluir
-//
-include_once('include/seo.php');
+<?php 
+/**
+ * Funciones y definiciones para el tema Gallardo
+ * 
+ * Este archivo contiene las funciones principales del tema, incluyendo:
+ * - Configuración del tema
+ * - Funciones de utilidad
+ * - Limpieza del head de WordPress
+ * 
+ * @package Gallardo
+ */
 
-//
-// Elimina CSS de la barra de wp
-//
-//
-add_filter('show_admin_bar', '__return_false');
-
-//
-// Imágenes destacadas
-//
-add_theme_support( 'post-thumbnails' ); 
-
-//
-// Recorta el extracto a n palabras
-//
-function gallo_excerpt( $length ) {
-	return 30;
-}
-add_filter( 'excerpt_length', 'gallo_excerpt', 999 );
-
-//
-// Remueve el tag <p> en el extracto
-//
-remove_filter ('the_excerpt', 'wpautop');
-
-//
-// Cambio de posición de barra de WordPress
-//
-// function gallo_bottom_admin_bar() {
-// echo '
-// <style type="text/css">
-// div#wpadminbar { top: auto; bottom: 0; position: fixed; }
-// .ab-sub-wrapper { bottom: 32px; }
-// html[lang] { margin-top: 0 !important; margin-bottom: 32px !important; }
-// @media screen and (max-width: 782px){
-// .ab-sub-wrapper { bottom: 46px; }
-// html[lang] { margin-bottom: 46px !important; }
-// }
-// </style>'; 
-// }
-// add_action('wp_head', 'gallo_bottom_admin_bar', 100);
-
-//
-// Registro de menús
-//
-register_nav_menus(
-	array(
-		'nav-primary' => 'Menú principal',
-	)
-);
-
-function gallo_custom_menu() {
-	$menu_name = 'nav-primary'; // specify custom menu slug
-	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
-		$menu = wp_get_nav_menu_object($locations[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
-
-		$menu_list .= "\t\t". '<ul class="navbar-nav mr-auto mt-2 mt-lg-0">' ."\n";
-		foreach ((array) $menu_items as $key => $menu_item) {
-			$title = $menu_item->title;
-			$url = $menu_item->url;
-			$menu_list .= "\t\t\t". '<li class="nav-item"><a class="nav-link" href="'. $url .'">'. $title .'</a></li>' ."\n";
-		}
-		$menu_list .= "\t\t". '</ul>' ."\n";
-	} else {
-		// $menu_list = '<!-- no list defined -->';
-	}
-	echo $menu_list;
+if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { 
+    die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); 
 }
 
-//
-// Función de paginación
-// Basado en: https://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
-//
-function gallo_posts_nav() {
+/* ============================================================================
+   CONFIGURACIÓN DEL TEMA
+   ============================================================================ */
 
-	if( is_singular() )
-		return;
+/**
+ * Configuración básica del tema
+ */
+function gallardo_theme_setup() {
+    // Activa las miniaturas (featured images) para posts y páginas
+    add_theme_support('post-thumbnails');
+    
+    // Oculta la barra de admin de WordPress en el frontend
+    add_filter('show_admin_bar', '__return_false');
+}
+add_action('after_setup_theme', 'gallardo_theme_setup');
 
-	global $wp_query;
+/* ============================================================================
+   FUNCIONES DE INCLUSIÓN DE TEMPLATES
+   ============================================================================ */
 
-	/** Stop execution if there's only 1 page */
-	if( $wp_query->max_num_pages <= 1 )
-		return;
-
-	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-	$max   = intval( $wp_query->max_num_pages );
-
-	/** Add current page to the array */
-	if ( $paged >= 1 )
-		$links[] = $paged;
-
-	/** Add the pages around the current page to the array */
-	if ( $paged >= 3 ) {
-		$links[] = $paged - 1;
-		$links[] = $paged - 2;
-	}
-
-	if ( ( $paged + 2 ) <= $max ) {
-		$links[] = $paged + 2;
-		$links[] = $paged + 1;
-	}
-
-	echo "\t\t\t\t\t" . '<div class="pagination">' . "\n";
-
-	/** Previous Post Link */
-	if ( get_previous_posts_link() )
-		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">%s</span>' . "\n", get_previous_posts_link('Recientes') );
-
-	/** Link to first page, plus ellipses if necessary */
-	if ( ! in_array( 1, $links ) ) {
-		$class = 1 == $paged ? ' active ' : '';
-
-		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1 %s"><a href="%s">%s</a></span>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
-
-		if ( ! in_array( 2, $links ) )
-		echo "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">…</span>' . "\n";
-	}
-
-	/** Link to current page, plus 2 pages in either direction if necessary */
-	sort( $links );
-	foreach ( (array) $links as $link ) {
-		$class = $paged == $link ? ' active ' : '';
-		printf( "\t\t\t\t\t\t" . '<span class="%s ml-1 mr-1"><a href="%s">%s</a></span>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
-	}
-
-	/** Link to last page, plus ellipses if necessary */
-	if ( ! in_array( $max, $links ) ) {
-		if ( ! in_array( $max - 1, $links ) )
-		echo "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">…</span>' . "\n";
-
-		$class = $paged == $max ? ' active ' : '';
-		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1 %s"><a href="%s">%s</a></span>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-	}
-
-	/** Next Post Link */
-	if ( get_next_posts_link() )
-		printf( "\t\t\t\t\t\t" . '<span class="ml-1 mr-1">%s</span>' . "\n", get_next_posts_link('Anteriores') );
-		echo "\t\t\t\t\t" . '</div>' . "\n";
-
+/**
+ * Incluye el archivo navbar.php
+ */
+function get_navbar() {
+    include 'navbar.php';
 }
 
-//
-// Rewrite Base
-// Basado en una solución: https://wordpress.stackexchange.com/questions/57070/change-the-page-slug-in-pagination
-//
-function gallo_rewrite_rules() {
-	global $wp_rewrite;
-	// $wp_rewrite->author_base = $author_slug;
-	//  print_r($wp_rewrite);
-	$wp_rewrite->author_base		= 'autor';
-	$wp_rewrite->search_base		= 'buscar';
-	$wp_rewrite->comments_base		= 'comentarios';
-	$wp_rewrite->pagination_base	= 'pagina';
-	// para las categorías y etiquetas usar la administración de WordPress que permite cambiar la base
-	$wp_rewrite->flush_rules();
+/**
+ * Incluye el archivo hero.php
+ */
+function get_hero() {
+    include 'hero.php';
 }
-add_action('init', 'gallo_rewrite_rules');
 
-//
-// Tiempo de lectura estimado
-// Basado en: https://medium.com/@nadeem4uwebtech/how-to-add-reading-time-in-wordpress-without-using-plugin-d2e8af7b1239
-//
+/**
+ * Incluye el archivo series.php
+ */
+function get_series() {
+    include 'series.php';
+}
+
+/* ============================================================================
+   TAXONOMÍAS PERSONALIZADAS
+   ============================================================================ */
+
+/**
+ * Crea la taxonomía Series
+ */
+function crear_taxonomia_series() {
+    register_taxonomy(
+        'series',
+        'post',
+        array(
+            'label' => 'Series',
+            'hierarchical' => true,
+            'show_ui' => true,
+            'show_in_rest' => true,
+        )
+    );
+}
+add_action('init', 'crear_taxonomia_series');
+include 'include/function-series.php';
+
+
+/* ============================================================================
+   FUNCIONES DE UTILIDAD
+   ============================================================================ */
+
+/**
+ * Estima el tiempo de lectura de un post
+ * 
+ * @return string Tiempo estimado de lectura en minutos
+ */
 function gallo_reading_time() {
-	$content = get_post_field( 'post_content', $post->ID );
-	$word_count = str_word_count( strip_tags( $content ) );
-	$readingtime = ceil($word_count / 200);
-	
-	if ($readingtime == 1) {
-		$timer = " min"; // singular
-	} else {
-		$timer = " min"; // plural
-	}
-	
-	$totalreadingtime = $readingtime . $timer;
-	return $totalreadingtime;
-	
+    global $post;
+    $content = get_post_field('post_content', $post->ID);
+    $word_count = str_word_count(strip_tags($content));
+    $readingtime = ceil($word_count / 200);
+    
+    $timer = " min";
+    $totalreadingtime = $readingtime . $timer;
+    
+    return $totalreadingtime;
 }
 
-//
-// Derivada del random_404() de telmeds
-//
+/**
+ * Muestra una cita célebre aleatoria
+ * 
+ * Selecciona y muestra una cita aleatoria de un conjunto predefinido
+ * con formato HTML y estilos Tailwind CSS
+ */
 function gallo_cita_random() {
-$vector = array(
-	1 => "Es posible robar las ideas, pero nadie puede robar su puesta en práctica ni la pasión por ellas. (Timothy Ferriss).",
-	2 => "La medicina es una ciencia de la incertidumbre y un arte de la probabilidad. (William Osler).",
-	3 => "La medicina es el arte de disputar los hombres a la muerte de hoy, para cedérselos en mejor estado, un poco más tarde. (Noel Clarasó)",
-);
-$numero = rand(1,3);
-echo "$vector[$numero]";
+    $vector = array(
+        1 => array(
+            'texto' => 'Es posible robar las ideas, pero nadie puede robar su puesta en práctica ni la pasión por ellas.',
+            'autor' => 'Timothy Ferriss'
+        ),
+        2 => array(
+            'texto' => 'La medicina es una ciencia de la incertidumbre y un arte de la probabilidad.',
+            'autor' => 'William Osler'
+        ),
+        3 => array(
+            'texto' => 'La medicina es el arte de disputar los hombres a la muerte de hoy, para cedérselos en mejor estado, un poco más tarde.',
+            'autor' => 'Noel Clarasó'
+        ),
+    );
+    
+    $numero = rand(1, 3);
+    $cita = $vector[$numero];
+    
+    echo '<span class="block mb-2">' . $cita['texto'] . '</span>';
+    echo '<span class="block text-right text-sm italic">— ' . $cita['autor'] . '</span>';
 }
 
-//
-// Retorna solamente 6 tags en the_tags(), pero lo afecta globalmente
-//
-//add_filter('term_links-post_tag','limit_to_five_tags');
-//
-//function limit_to_five_tags($terms) {
-//	return array_slice($terms,0,5,true);
-//}
+/* ============================================================================
+   LIMPIEZA Y OPTIMIZACIÓN DE WORDPRESS
+   ============================================================================ */
 
-//
-// Posts relacionados
-// Basado en: https://wpcrumbs.com/how-to-display-related-posts-without-a-plugin/
-//
-function gallo_related_posts($args = array()) {
-	global $post;
-
-	// default args
-	$args = wp_parse_args($args, array(
-		'post_id' => !empty($post) ? $post->ID : '',
-		'taxonomy' => 'category',
-		'limit' => 3,
-		'post_type' => !empty($post) ? $post->post_type : 'post',
-		'orderby' => 'date',
-		'order' => 'DESC'
-	));
-
-	// check taxonomy
-	if (!taxonomy_exists($args['taxonomy'])) {
-		return;
-	}
-
-	// post taxonomies
-	$taxonomies = wp_get_post_terms($args['post_id'], $args['taxonomy'], array('fields' => 'ids'));
-
-	if (empty($taxonomies)) {
-		return;
-	}
-
-	// query
-	$related_posts = get_posts(array(
-		'post__not_in' => (array) $args['post_id'],
-		'post_type' => $args['post_type'],
-		'tax_query' => array(
-			array(
-				'taxonomy' => $args['taxonomy'],
-				'field' => 'term_id',
-				'terms' => $taxonomies
-			),
-		),
-		'posts_per_page' => $args['limit'],
-		'orderby' => $args['orderby'],
-		'order' => $args['order']
-	));
-
-	include( locate_template('include/related-posts.php', false, false) );
-
-	wp_reset_postdata();
-}
-
-
-//
-//Social media share buttons
-//
-function gallo_share() {
-	$url = urlencode(get_the_permalink());
-	$title = urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8'));
-	$media = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full'));
-
-include( locate_template('include/share.php', false, false) );
-}
-
-//
-// Limpia head del sitio
-// https://gist.github.com/pedro-vasconcelos/ee96c1dd3907a0fdf125ef63c353c5f7
-//
-// REMOVE WP EMOJI
+/**
+ * Elimina scripts y estilos de emojis de WordPress
+ * Los emojis nativos del navegador son suficientes
+ */
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('admin_print_styles', 'print_emoji_styles');
 
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
+/**
+ * Elimina enlaces RSS del head
+ * Útil si no se usan feeds RSS
+ */
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'feed_links_extra', 3);
 
-// First, we remove all the RSS feed links from wp_head using remove_action
-remove_action( 'wp_head','feed_links', 2 );
-remove_action( 'wp_head','feed_links_extra', 3 );
+/**
+ * Elimina sugerencias de recursos (dns-prefetch, preconnect)
+ */
+remove_action('wp_head', 'wp_resource_hints', 2);
 
-// Resource Hints is a rather new W3C specification that “defines the dns-prefetch,
-// preconnect, prefetch, and prerender relationships of the HTML Link Element (<link>)”.
-// These can be used to assist the browser in the decision process of which origins it
-// should connect to, and which resources it should fetch and preprocess to improve page performance.
-remove_action( 'wp_head', 'wp_resource_hints', 2 );
+/**
+ * Elimina enlaces de la REST API
+ * Útil si no se usa la API REST de WordPress
+ */
+remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+remove_action('wp_head', 'rest_output_link_wp_head', 10);
 
-// Sends a Link header for the REST API.
-// https://developer.wordpress.org/reference/functions/rest_output_link_header/
-remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+/**
+ * Elimina enlaces de descubrimiento de oEmbed
+ */
+remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 
-// Outputs the REST API link tag into page header.
-// https://developer.wordpress.org/reference/functions/rest_output_link_wp_head/
-remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+/**
+ * Elimina shortlinks automáticos
+ */
+remove_action('wp_head', 'wp_shortlink_wp_head');
 
-// https://developer.wordpress.org/reference/functions/wp_oembed_add_discovery_links/
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+/**
+ * Elimina el enlace RSD (Really Simple Discovery)
+ * Usado por clientes XML-RPC antiguos
+ */
+remove_action('wp_head', 'rsd_link');
 
-// WordPress Page/Post Shortlinks
-// URL shortening is sometimes useful, but this automatic ugly url
-// in your header is useless. There is no reason to keep this. None.
-remove_action( 'wp_head', 'wp_shortlink_wp_head');
+/**
+ * Elimina el enlace de Windows Live Writer
+ * Cliente de blog descontinuado
+ */
+remove_action('wp_head', 'wlwmanifest_link');
 
-// Weblog Client Link
-// Are you editing your WordPress blog using your browser?
-// Then you are not using a blog client and this link can probably be removed.
-// This link is also used by a few 3rd party sites/programs that use the XML-RPC request formats.
-// One example is the Flickr API. So if you start having trouble with a 3rd party service that
-// updates your blog, add this back in. Otherwise, remove it.
-remove_action ('wp_head', 'rsd_link');
-
-// Windows Live Writer Manifest Link
-// If you don’t know what Windows Live Writer is (it’s another blog editing client), then remove this link.
-remove_action( 'wp_head', 'wlwmanifest_link');
-
-// WordPress Generator (with version information)
-// This announces that you are running WordPress and what version you are using. It serves no purpose.
+/**
+ * Elimina la etiqueta meta generator
+ * Oculta la versión de WordPress por seguridad
+ */
 remove_action('wp_head', 'wp_generator');
 
-function gallo_deregister_scripts(){
-	wp_deregister_script( 'wp-embed' );
+/**
+ * Elimina el script wp-embed.js del frontend
+ * No es necesario si no se usan embeds de WordPress
+ */
+function gallo_deregister_scripts() {
+    wp_deregister_script('wp-embed');
 }
-add_action( 'wp_footer', 'gallo_deregister_scripts' );
-
-function gallo_cleanup_query_string( $src ){ 
-	$parts = explode( '?', $src ); 
-	return $parts[0]; 
-} 
-add_filter( 'script_loader_src', 'gallo_cleanup_query_string', 15, 1 ); 
-add_filter( 'style_loader_src', 'gallo_cleanup_query_string', 15, 1 );
+add_action('wp_footer', 'gallo_deregister_scripts');

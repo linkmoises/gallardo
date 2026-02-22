@@ -1,152 +1,86 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); } ?>
 <?php get_header(); ?>
-	<div class="container-fluid"> <!-- Inicia .container (coloca al centro la estructura de la página) -->
+<?php get_navbar(); ?>
+<?php get_hero(); ?>
+<?php get_series(); ?>
 
-<!-- Jumbotron
-================================================== -->
-		<div id="jumbohome" class="jumbotron mb-30px p-4 p-md-5 text-white rounded bg-dark">
-			<div class="col-md-6 px-0">
-				<h1 class="display-4 font-italic">Bienvenido a mi blog personal</h1>
-				<p class="lead my-3">Desde aquí hablo un poco de EdTech, Thinkpads, LEGO, Linux, Redes, Seguridad y Medicina.</p>
-				<p class="lead mb-0"><a href="https://moisesserrano.com/sobre-mi/" class="text-white font-weight-bold">Conoce un poco más sobre lo que hago...</a></p>
-			</div>
-		</div>
-<!-- Cierra Jumbotron
-================================================== -->
+	<section class="w-full mx-auto px-6 mb-6">
+        
+        <div class="flex justify-between items-center bg-white border border-gray-300 p-6 rounded-2xl mb-6">
+            <h2 class="text-xl font-bold">Últimas entradas</h2>
+            <a href="#" class="flex items-center gap-2 text-sm font-semibold hover:opacity-70 transition">
+                Ver el archivo completo 
+                <span class="bg-black text-white w-6 h-6 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </span>
+            </a>
+        </div>
 
-<!-- Contenido principal
-================================================== -->
-		<div class="main-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <?php
+            // Obtener el ID del último post
+            $latest_post_args = array(
+                'posts_per_page' => 1,
+                'post_status' => 'publish',
+                'fields' => 'ids'
+            );
+            $latest_post_query = new WP_Query($latest_post_args);
+            $exclude_id = $latest_post_query->posts ? $latest_post_query->posts[0] : 0;
+            wp_reset_postdata();
+            
+            // Query para los siguientes 8 posts
+            $args = array(
+                'posts_per_page' => 8,
+                'post_status' => 'publish',
+                'post__not_in' => array($exclude_id)
+            );
+            $recent_posts = new WP_Query($args);
+            
+            if ($recent_posts->have_posts()) :
+                while ($recent_posts->have_posts()) : $recent_posts->the_post();
+                    $home_img_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+                    if (!$home_img_url) {
+                        $home_img_url = get_bloginfo('template_url') . '/images/blank.jpg';
+                    }
+                    $categories = get_the_category();
+                    $category_name = !empty($categories) ? esc_html($categories[0]->name) : 'Sin categoría';
+                    $excerpt = get_the_excerpt();
+                    $comments_count = get_comments_number();
+            ?>
+            
+            <article class="bg-white p-5 rounded-2xl border border-gray-300 shadow-sm hover:shadow-md transition group">
+                <a href="<?php the_permalink(); ?>">
+                    <span class="inline-block px-4 py-1.5 border border-gray-200 rounded-full text-[10px] font-medium text-gray-500 mb-4"><?php echo $category_name; ?></span>
+                    <h3 class="text-xl font-bold leading-tight mb-6 min-h-[3.5rem]"><?php the_title(); ?></h3>
+                    <div class="aspect-[2/1] rounded-2xl overflow-hidden mb-4">
+                        <img src="<?php echo esc_url($home_img_url); ?>" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6 line-clamp-3">
+                        <?php echo esc_html($excerpt); ?>
+                    </p>
+                    <div class="flex justify-between items-center pt-4 border-t border-gray-50">
+                        <div class="text-[10px] text-gray-400">
+                            <?php echo get_the_date('M d, Y'); ?> <span class="mx-1">por</span> <span class="font-bold text-black"><?php the_author(); ?></span>
+                        </div>
+                        <div class="flex items-center gap-1 text-gray-400 text-[10px]">
+                            <i class="fa-regular fa-comment"></i> <?php echo $comments_count; ?>
+                        </div>
+                    </div>
+                </a>
+            </article>
 
-<?php
-$featured_loop = new WP_Query(
-	array(
-		'post_type' => 'post',
-		'posts_per_page' => 2,
-		'category_name' => 'destacado',
-		//'order' => 'ASC',
-		//'orderby' => 'name'
-	)
-);
-?>
-<?php if ( $featured_loop->have_posts() ): ?>
-<!-- Posts Destacados
-================================================== -->
-			<section class="featured-posts">
-				<div class="section-title"><h2><span>Más visitados</span></h2></div>
-				<div class="row"><!-- inicio fila -->
-<?php while ( $featured_loop->have_posts() ) : $featured_loop->the_post(); ?>
-<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');?>
-					<!-- inicio post -->
-					<div class="col-md-6 mb-30px">
-						<div class="listfeaturedtag h-100">
-							<div class="row h-100">
-								<div class="col-12 col-md-12 col-lg-5 pr-lg-0">
-									<div class="h-100">
-										<div class="wrapthumbnail">
-											<a href="<?php the_permalink(); ?>"><img class="featured-box-img-cover" src="<?php echo $featured_img_url; ?>" alt="<?php the_title(); ?>" /></a>
-										</div>
-									</div>
-								</div>
-								<div class="col-12 col-md-12 col-lg-7">
-									<div class="h-100 card-group">
-										<div class="card">
-											<div class="card-body">
-												<h2 class="card-title"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-												<h4 class="card-text"><?php the_excerpt(); ?></h4>
-											</div>
-											<div class="card-footer b-0 bg-white mt-auto">
-								<div class="wrapfooter">
-									<span class="meta-footer-thumb profile-author">
-										<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 72 ); ?></a>
-									</span>
-									<span class="author-meta">
-										<span class="post-name"><a target="_blank" href="#"><?php the_author(); ?></a></span><br/>
-										<span class="post-date"><?php echo get_the_date('j M Y'); ?></span>
-										<span class="dot"></span>
-										<span class="post-read"><?php echo gallo_reading_time(); ?></span>
-									</span>
-									<span class="post-read-more"><a href="<?php the_permalink(); ?>" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
-									<div class="clearfix"></div>
-								</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- fin post -->
-<?php endwhile; ?>
-				</div> <!-- fin fila -->
-			</section>
-<?php endif; ?>
-<?php wp_reset_query(); ?>
-<!-- intermezzo -->
-<?php
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$home_loop = new WP_Query(
-	array(
-		'post_type' => 'post',
-		'posts_per_page' => 6,
-		'paged' => $paged,
-		//'order' => 'ASC',
-		//'orderby' => 'name'
-	)
-);
-?>
-<?php if ( $home_loop->have_posts() ) { ?>
-<!-- Todos los posts
-================================================== -->
-			<section class="recent-posts">
-				<div class="section-title"><h2><span>Todas las historias</span></h2></div>
-				<div class="row listrecent"> <!-- inicio fila recientes -->
-<?php while ( $home_loop->have_posts() ) : $home_loop->the_post(); ?>
-<?php $home_img_url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');?>
-					<!-- inicio post -->
-					<div id="post-<?php the_ID(); ?>" class="col-lg-4 col-md-6 mb-30px card-group">
-						<div class="card h-100">
-							<div class="maxthumb">
-								<a href="<?php the_permalink(); ?>"><img class="img-fluid" src="<?php echo $home_img_url; ?>" alt="<?php the_title(); ?>" /></a>
-							</div>
-							<div class="card-body">
-								<h2 class="card-title"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<h4 class="card-text"><?php the_excerpt(); ?></h4>
-							</div>
-							<div class="card-footer bg-white">
-								<div class="wrapfooter">
-									<span class="meta-footer-thumb profile-author">
-										<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 72 ); ?></a>
-									</span>
-									<span class="author-meta">
-										<span class="post-name"><a target="_blank" href="#"><?php the_author(); ?></a></span><br/>
-										<span class="post-date"><?php echo get_the_date('j M Y'); ?></span>
-										<span class="dot"></span>
-										<span class="post-read"><?php echo gallo_reading_time(); ?></span>
-									</span>
-									<span class="post-read-more"><a href="<?php the_permalink(); ?>" title="Leer historia"><i class="fas fa-bookmark"></i></a></span>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end post -->
-<?php endwhile; ?>
-				</div> <!-- fin fila recientes -->
-			</section>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+            ?>
+            
+            <div class="col-span-full text-center py-12">
+                <p class="text-gray-400">No hay más publicaciones disponibles.</p>
+            </div>
+            
+            <?php endif; ?>
+        </div>
+    </section>
 
-<!-- Paginación
-================================================== -->
-			<div class="bottompagination">
-				<div class="pointerup"><i class="fa fa-caret-up"></i></div>
-				<span class="navigation" role="navigation">
-<?php gallo_posts_nav(); ?>
-				</span>
-			</div>
-<!-- Fin Paginación
-================================================== -->
-<?php } ?>
-
-		</div><!-- cierra .main-content -->
-	</div> <!-- cierra .container -->
 <?php get_footer(); ?>
