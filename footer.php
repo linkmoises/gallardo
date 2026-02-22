@@ -5,16 +5,16 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 text-center">
                 
                 <div class="lg:col-span-12 mx-auto flex flex-col items-center justify-center">
-                    <img src="<?php bloginfo("template_url"); ?>/images/mini-neg.png" class="mb-6" />
+                    <a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo("template_url"); ?>/images/mini-neg.png" class="mb-6" /></a>
                     <p class="text-gray-400 text-lg leading-relaxed max-w-md mb-8">
                         <?php gallo_cita_random(); ?>
                     </p>
 
                     <div class="flex gap-6 justify-center">
-                        <a target="_blank" href="https://twitter.com/linkmoises" class="tw-ic"><i class="fab fa-twitter fa-lg white-text" aria-hidden="true"> </i></a>
-                        <a target="_blank" href="https://facebook.com/linkmoises" class="fb-ic"><i class="fab fa-facebook-f fa-lg white-text" aria-hidden="true"> </i></a>
-                        <a target="_blank" href="https://linkedin.com/in/linkmoises" class="li-ic"><i class="fab fa-linkedin-in fa-lg white-text" aria-hidden="true"> </i></a>
-                        <a target="_blank" href="https://instagram.com/linkmoises" class="ins-ic"><i class="fab fa-instagram fa-lg white-text" aria-hidden="true"> </i></a>
+                        <a target="_blank" href="https://twitter.com/linkmoises" class="tw-ic"><i class="fa-brands fa-x-twitter fa-lg white-text"></i></a>
+                        <a target="_blank" href="https://facebook.com/linkmoises" class="fb-ic"><i class="fab fa-facebook-f fa-lg white-text"></i></a>
+                        <a target="_blank" href="https://linkedin.com/in/linkmoises" class="li-ic"><i class="fab fa-linkedin-in fa-lg white-text"></i></a>
+                        <a target="_blank" href="https://instagram.com/linkmoises" class="ins-ic"><i class="fab fa-instagram fa-lg white-text"></i></a>
 				    </div>
                 </div>
 

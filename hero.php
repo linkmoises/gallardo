@@ -70,7 +70,7 @@
             </div>
 
             <div class="bg-white p-6 rounded-2xl border border-gray-300 shadow-sm">
-                <p class="text-xs font-bold text-center uppercase tracking-widest text-gray-400 mb-6">Redes Sociales</p>
+                <p class="text-xs font-bold text-center uppercase tracking-widest text-gray-400 mb-6">Mis Redes Sociales</p>
                 <div class="grid grid-cols-4 gap-4">
                     <a href="https://facebook.com/linkmoises" target="_blank" class="flex flex-col items-center gap-1">
                         <span class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm"><i class="fa-brands fa-facebook-f"></i></span>

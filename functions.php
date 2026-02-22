@@ -128,6 +128,19 @@ function gallo_cita_random() {
     echo '<span class="block text-right text-sm italic">— ' . $cita['autor'] . '</span>';
 }
 
+/**
+ * Muestra enlaces a redes sociales
+ * 
+ * Muestra enlaces para compartir el contenido
+ */
+function gallo_share() {
+	$url = urlencode(get_the_permalink());
+	$title = urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8'));
+	$media = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full'));
+
+include( locate_template('include/gallo-share.php', false, false) );
+}
+
 /* ============================================================================
    LIMPIEZA Y OPTIMIZACIÓN DE WORDPRESS
    ============================================================================ */
@@ -140,6 +153,12 @@ remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('admin_print_styles', 'print_emoji_styles');
+
+/**
+ * Elimina estilos embebidos
+ * de Gutenberg
+ */
+add_filter( 'should_load_separate_core_block_assets', '__return_false' );
 
 /**
  * Elimina enlaces RSS del head
@@ -196,3 +215,69 @@ function gallo_deregister_scripts() {
     wp_deregister_script('wp-embed');
 }
 add_action('wp_footer', 'gallo_deregister_scripts');
+
+/* ============================================================================
+   CONFIGURACIÓN DE PAGINACIÓN
+   ============================================================================ */
+
+/**
+ * Establece 8 posts por página en archivos
+ */
+function gallo_posts_per_page($query) {
+    if (!is_admin() && $query->is_main_query() && (is_archive() || is_category() || is_tag() || is_tax())) {
+        $query->set('posts_per_page', 8);
+    }
+}
+add_action('pre_get_posts', 'gallo_posts_per_page');
+
+/* ============================================================================
+   MENÚS DE NAVEGACIÓN
+   ============================================================================ */
+
+/**
+ * Registra los menús de navegación
+ */
+function gallo_register_menus() {
+    register_nav_menus(array(
+        'nav-primary' => 'Menú principal',
+    ));
+}
+add_action('init', 'gallo_register_menus');
+
+/**
+ * Genera el menú de navegación personalizado con íconos
+ * 
+ * Para añadir íconos, agrega la clase CSS del ícono en "Clases CSS" 
+ * del item del menú en WordPress (ej: fa-solid fa-microchip)
+ */
+function gallo_custom_menu() {
+    $menu_name = 'nav-primary';
+    
+    if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+        $menu = wp_get_nav_menu_object($locations[$menu_name]);
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+        
+        $menu_list = '';
+        
+        foreach ((array) $menu_items as $key => $menu_item) {
+            $title = $menu_item->title;
+            $url = $menu_item->url;
+            $classes = implode(' ', $menu_item->classes);
+            
+            // Extraer clases de FontAwesome si existen
+            $icon = '';
+            if (preg_match('/(fa-[a-z]+ fa-[a-z0-9-]+)/i', $classes, $matches)) {
+                $icon = '<i class="' . esc_attr($matches[1]) . '"></i> ';
+            }
+            
+            $menu_list .= '<a href="' . esc_url($url) . '" class="flex items-center gap-2 border border-gray-300 rounded-lg px-8 py-4 hover:shadow-md transition bg-white justify-center text-base font-semibold">';
+            $menu_list .= $icon . esc_html($title);
+            $menu_list .= '</a>' . "\n";
+        }
+        
+        echo $menu_list;
+    } else {
+        // Menú por defecto si no hay menú configurado
+        echo '<p class="col-span-full text-center text-gray-500">Configure el menú en Apariencia → Menús</p>';
+    }
+}

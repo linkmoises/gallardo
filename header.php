@@ -8,8 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/0f01975e5a.js" crossorigin="anonymous"></script>
     <link href="<?php bloginfo("template_url"); ?>/css/custom.css" rel="stylesheet">
-</head>
-<!-- === inicia wp_head() ============================ -->
-<?php wp_head(); ?>
-<!-- === fin wp_head() =============================== -->
+    <link href="<?php bloginfo("template_url"); ?>/css/wp.css" rel="stylesheet">
+    <link href="<?php bloginfo("template_url"); ?>/css/codecolorer.css" rel="stylesheet">
 </head>

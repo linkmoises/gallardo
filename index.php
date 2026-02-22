@@ -10,7 +10,7 @@
                 <?php gallo_share(); ?>
             </div>
 
-            <article class="flex-1 bg-white border border-gray-300 rounded-2xl p-12 overflow-hidden">
+            <article class="flex-1 bg-white border border-gray-300 rounded-2xl p-12">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <h1 class="text-4xl font-bold mb-4"><?php the_title(); ?></h1>
                     <div class="after-post-tags mb-6">

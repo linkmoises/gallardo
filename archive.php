@@ -1,43 +1,50 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); } ?>
 <?php get_header(); ?>
 <?php get_navbar(); ?>
-<?php get_hero(); ?>
-<?php get_series(); ?>
 
-	<section class="w-full mx-auto px-6 mb-6">
-        
+    <section class="w-full mx-auto px-6 mb-6">
+        <div class="p-12 bg-gray-200 rounded-xl text-center">
+            <nav class="text-lg text-gray-600 mb-4">
+                <a href="<?php echo home_url(); ?>" class="hover:text-black">Inicio</a>
+                <span class="mx-2">/</span>
+                <span class="text-black font-semibold"><?php single_cat_title(); ?></span>
+            </nav>
+            <?php if (is_category() && category_description()) : ?>
+                <div class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                    <?php echo category_description(); ?>
+                </div>
+            <?php elseif (is_tag() && tag_description()) : ?>
+                <div class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                    <?php echo tag_description(); ?>
+                </div>
+            <?php elseif (is_tax() && term_description()) : ?>
+                <div class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                    <?php echo term_description(); ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <section class="w-full mx-auto px-6 mb-6">
+
         <div class="flex justify-between items-center bg-white border border-gray-300 p-6 rounded-2xl mb-6">
-            <h2 class="text-xl font-bold">Últimas entradas</h2>
-            <a href="<?php echo get_post_type_archive_link('post'); ?>" class="flex items-center gap-2 text-sm font-semibold hover:opacity-70 transition">
-                Ver el archivo completo 
-                <span class="bg-black text-white w-6 h-6 rounded-full flex items-center justify-center">
-                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                </span>
-            </a>
+            <h2 class="text-xl font-bold"><?php echo get_the_archive_title(); ?></h2>
+            <div class="pagination-wrapper">
+                <?php
+                // Paginación
+                the_posts_pagination(array(
+                    'mid_size' => 2,
+                    'prev_text' => '← Anterior',
+                    'next_text' => 'Siguiente →',
+                ));
+                ?>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             <?php
-            // Obtener el ID del último post
-            $latest_post_args = array(
-                'posts_per_page' => 1,
-                'post_status' => 'publish',
-                'fields' => 'ids'
-            );
-            $latest_post_query = new WP_Query($latest_post_args);
-            $exclude_id = $latest_post_query->posts ? $latest_post_query->posts[0] : 0;
-            wp_reset_postdata();
-            
-            // Query para los siguientes 8 posts
-            $args = array(
-                'posts_per_page' => 8,
-                'post_status' => 'publish',
-                'post__not_in' => array($exclude_id)
-            );
-            $recent_posts = new WP_Query($args);
-            
-            if ($recent_posts->have_posts()) :
-                while ($recent_posts->have_posts()) : $recent_posts->the_post();
+            if (have_posts()) :
+                while (have_posts()) : the_post();
                     $home_img_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
                     if (!$home_img_url) {
                         $home_img_url = get_bloginfo('template_url') . '/images/blank.jpg';
@@ -71,15 +78,28 @@
 
             <?php
                 endwhile;
-                wp_reset_postdata();
             else :
             ?>
             
             <div class="col-span-full text-center py-12">
-                <p class="text-gray-400">No hay más publicaciones disponibles.</p>
+                <p class="text-gray-400">No hay publicaciones disponibles.</p>
             </div>
             
             <?php endif; ?>
+        </div>
+
+        <div class="flex justify-between items-center bg-white border border-gray-300 p-6 rounded-2xl mb-6">
+            <h2 class="text-xl font-bold"><?php echo get_the_archive_title(); ?></h2>
+            <div class="pagination-wrapper">
+                <?php
+                // Paginación
+                the_posts_pagination(array(
+                    'mid_size' => 2,
+                    'prev_text' => '← Anterior',
+                    'next_text' => 'Siguiente →',
+                ));
+                ?>
+            </div>
         </div>
 
     </section>
