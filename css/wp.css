@@ -56,15 +56,23 @@
 	color:rgba(0,0,0,.44);
 	fill:rgba(0,0,0,.44);
 }
+ul.tags {
+	padding-left: 0;
+	margin-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
 ul.tags li {
-	display:inline-block;
-	font-size:0.9rem;
+	display: inline-block;
+	font-size: 0.9rem;
 }
 ul.tags li a {
 	background:rgba(0,0,0,.05);
 	color:rgba(0,0,0,.6);
 	border-radius:3px;
 	padding:5px 10px;
+	display: inline-block;
 }
 ul.tags li a:hover {
 	background:rgba(0,0,0,.07);

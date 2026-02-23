@@ -14,7 +14,7 @@
                 $categories = get_the_category();
                 $category_name = !empty($categories) ? esc_html($categories[0]->name) : 'Sin categoría';
         ?>
-        <section id="gallo-last" class="lg:col-span-9 relative rounded-2xl overflow-hidden min-h-[500px] aspect-[2/1] flex items-center bg-cyan-500">
+        <section id="gallo-last" class="lg:col-span-9 relative rounded-2xl overflow-hidden aspect-square lg:aspect-[2/1] lg:min-h-[500px] flex items-center bg-cyan-500">
             <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent">
                 <?php if ($featured_img_url) : ?>
                     <img src="<?php echo esc_url($featured_img_url); ?>" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover mix-blend-overlay">
@@ -23,10 +23,10 @@
                 <?php endif; ?>
             </div>
             
-            <div class="relative z-10 p-12 text-white max-w-2xl">
+            <div class="relative z-10 p-6 lg:p-12 text-white max-w-2xl">
                 <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider border border-white/30"><?php echo $category_name; ?></span>
-                <h1 class="text-6xl font-bold mt-6 leading-tight drop-shadow-lg"><?php the_title(); ?></h1>
-                <a href="<?php the_permalink(); ?>" class="inline-flex items-center mt-10 text-lg font-semibold group drop-shadow-md">
+                <h1 class="text-3xl lg:text-6xl font-bold mt-4 lg:mt-6 leading-tight drop-shadow-lg"><?php the_title(); ?></h1>
+                <a href="<?php the_permalink(); ?>" class="inline-flex items-center mt-6 lg:mt-10 text-base lg:text-lg font-semibold group drop-shadow-md">
                     Leer más
                     <span class="ml-3 bg-white text-cyan-600 w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-cyan-100 transition">
                         <i class="fa-solid fa-arrow-right"></i>
@@ -39,14 +39,14 @@
             wp_reset_postdata();
         else :
         ?>
-        <section id="gallo-last" class="lg:col-span-9 relative rounded-2xl overflow-hidden min-h-[500px] aspect-[2/1] flex items-center bg-cyan-500">
+        <section id="gallo-last" class="lg:col-span-9 relative rounded-2xl overflow-hidden aspect-square lg:aspect-[2/1] lg:min-h-[500px] flex items-center bg-cyan-500">
             <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent">
                 <img src="<?php bloginfo("template_url"); ?>/images/blank.jpg" alt="Hero" class="w-full h-full object-cover mix-blend-overlay">
             </div>
             
-            <div class="relative z-10 p-12 text-white max-w-2xl">
+            <div class="relative z-10 p-6 lg:p-12 text-white max-w-2xl">
                 <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider border border-white/30">Blog</span>
-                <h1 class="text-6xl font-bold mt-6 leading-tight drop-shadow-lg">No hay publicaciones disponibles</h1>
+                <h1 class="text-3xl lg:text-6xl font-bold mt-4 lg:mt-6 leading-tight drop-shadow-lg">No hay publicaciones disponibles</h1>
             </div>
         </section>
         <?php endif; ?>

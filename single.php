@@ -6,11 +6,11 @@
 
         <div class="lg:col-span-9 flex gap-6">
 
-            <div class="w-[5%] sticky top-6 self-start">
+            <div class="hidden lg:block w-[5%] sticky top-6 self-start">
                 <?php gallo_share(); ?>
             </div>
 
-            <article class="flex-1 bg-white border border-gray-300 rounded-2xl p-12 overflow-hidden">
+            <article class="flex-1 bg-white border border-gray-300 rounded-2xl p-6 lg:p-12 overflow-hidden">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <h1 class="text-4xl font-bold mb-4"><?php the_title(); ?></h1>
                     <div class="after-post-tags mb-6">

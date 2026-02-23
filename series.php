@@ -1,8 +1,8 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die('Por favor no cargue esta p&aacute;gina directamente. &iexcl;Gracias!'); } ?>
 
-    <div class="w-full px-6 mb-6 flex gap-6">
+    <div class="w-full px-6 mb-6 flex flex-col lg:flex-row gap-6">
         
-        <section id="gallo-series" class="w-3/4 bg-white relative group">
+        <section id="gallo-series" class="w-full lg:w-3/4 bg-white relative group">
             
             <div class="flex justify-between items-center bg-white border border-gray-300 p-6 rounded-2xl mb-6">
                 <h2 class="text-xl font-bold">Series</h2>
@@ -40,11 +40,11 @@
                             $term_link = get_term_link($term);
                     ?>
                     
-                    <div class="min-w-[800px] h-[400px] relative overflow-hidden rounded-2xl shrink-0">
+                    <div class="w-full aspect-square lg:min-w-[800px] lg:w-[800px] lg:aspect-[2/1] relative overflow-hidden rounded-2xl shrink-0">
                         <img src="<?php echo esc_url($image_url); ?>" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-10 flex flex-col justify-end">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent p-6 lg:p-10 flex flex-col justify-end">
                             <span class="w-fit px-4 py-1 border border-white/30 rounded-full text-[10px] text-white mb-4 backdrop-blur-md">Serie</span>
-                            <h3 class="text-white text-3xl font-bold leading-tight drop-shadow-lg"><?php echo esc_html($term->name); ?></h3>
+                            <h3 class="text-white text-2xl lg:text-3xl font-bold leading-tight drop-shadow-lg"><?php echo esc_html($term->name); ?></h3>
                             <?php if ($term->description) : ?>
                                 <p class="text-white/80 text-sm mt-2 line-clamp-2 drop-shadow-md"><?php echo esc_html($term->description); ?></p>
                             <?php endif; ?>
@@ -62,7 +62,7 @@
                     else : 
                     ?>
                     
-                    <div class="min-w-[800px] h-[400px] relative overflow-hidden rounded-2xl shrink-0 flex items-center justify-center bg-gray-200">
+                    <div class="w-full aspect-square lg:min-w-[800px] lg:w-[800px] lg:aspect-[2/1] relative overflow-hidden rounded-2xl shrink-0 flex items-center justify-center bg-gray-200">
                         <p class="text-gray-500 text-lg">No hay series disponibles</p>
                     </div>
                     
@@ -72,8 +72,8 @@
 
         </section>
 
-        <section id="gallo-books" class="w-1/4">
-            <div class="bg-black rounded-2xl h-full flex items-center justify-center text-white p-8">
+        <section id="gallo-books" class="w-full lg:w-1/4 order-last">
+            <div class="bg-black rounded-2xl h-full min-h-[200px] lg:min-h-0 flex items-center justify-center text-white p-8">
                 <a href="/publicaciones" class="text-lg font-semibold text-white relative inline-block group">
                     Descubre más libros y publicaciones
                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
