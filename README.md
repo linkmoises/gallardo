@@ -1,15 +1,15 @@
 # Gallardo
 
-Gallardo es una plantilla personalizada para WordPress inspirada en el diseño limpio de Medium.com y DEV.to.
+Gallardo es una plantilla personalizada para WordPress con un diseño moderno y minimalista, optimizada para blogs personales y publicaciones de contenido.
 
 ## Características
 
-- Diseño limpio y ligero con estética moderna
-- Slider de series rotatorio infinito (4 items)
-- Sistema de navegación con navbar
-- Hero section personalizable
+- Diseño moderno con Tailwind CSS y componentes redondeados
+- Sistema de taxonomías personalizadas para series de posts
+- Diseño completamente adaptativo (móvil, tablet, desktop)
+- Tarjetas de posts con hover effects y transiciones suaves
 - Optimización del head de WordPress (eliminación de scripts innecesarios)
-- Soporte para miniaturas en posts
+- Paginación personalizada y limpia
 - Barra de administración oculta en el frontend
 
 ## Estructura del tema
@@ -17,30 +17,44 @@ Gallardo es una plantilla personalizada para WordPress inspirada en el diseño l
 ```
 gallardo/
 ├── css/
-│   └── custom.css          # Estilos personalizados
+│   ├── custom.css          # Estilos personalizados
+│   ├── wp.css              # Estilos para contenido de WordPress
+│   └── codecolorer.css     # Estilos para bloques de código
 ├── images/                 # Imágenes del tema
 ├── include/
-│   └── function-series.php # Funciones relacionadas con series
+│   ├── function-series.php # Funciones relacionadas con series
+│   └── gallo-share.php     # Componente de compartir en redes
+├── archive.php             # Plantilla de archivos y categorías
 ├── footer.php              # Pie de página
 ├── functions.php           # Funciones del tema
-├── header.php              # Cabecera
-├── hero.php                # Sección hero
+├── header.php              # Cabecera con meta tags
+├── hero.php                # Sección hero con último post
 ├── home.php                # Página principal
-├── navbar.php              # Navegación
+├── index.php               # Plantilla índice
+├── navbar.php              # Navegación principal
+├── searchform.php          # Formulario de búsqueda
 ├── series.php              # Slider de series
-└── single.php              # Plantilla de posts individuales
+├── sidebar.php             # Barra lateral con widgets
+├── single.php              # Plantilla de posts individuales
+└── style.css               # Hoja de estilos principal
 ```
 
-## Cambios recientes (2026)
+## Características técnicas
 
-### functions.php
-- Añadidos comentarios explicativos en español para todas las funciones
-- Funciones organizadas:
-  - `get_navbar()` - Incluye el navbar
-  - `gallo_reading_time()` - Estima tiempo de lectura
-  - `gallo_cita_random()` - Muestra cita aleatoria
-  - `gallo_deregister_scripts()` - Elimina script wp-embed
-- Limpieza del head: eliminados emojis, RSS, shortlinks, meta generator, y otros elementos innecesarios
+### Funcionalidades
+- `get_navbar()` - Incluye el navbar
+- `get_hero()` - Incluye la sección hero
+- `get_series()` - Incluye el slider de series
+- `gallo_share()` - Botones de compartir en redes sociales
+- `gallo_custom_menu()` - Menú personalizado con grid responsive
+- Taxonomía personalizada "series" para agrupar posts relacionados
+- Paginación sin texto redundante, solo números y navegación
+
+### Optimizaciones
+- Head limpio: eliminados emojis, RSS feeds innecesarios, shortlinks, meta generator
+- Eliminación de wp-embed.js
+- Imágenes con lazy loading y object-fit
+- Transiciones CSS suaves en hover states
 
 ## Empezando
 
@@ -63,7 +77,7 @@ Luego en el panel de control de WordPress, en _Apariencia_ > _Temas_ activar la 
 
 ### Construido con
 
-- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilizado
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilizado (CDN)
 - [FontAwesome](https://fontawesome.com/) - Para los íconos
 - [WordPress](https://wordpress.org/) - CMS
 

@@ -13,6 +13,8 @@
             <div class="flex gap-4 justify-center">
                 <a href="<?php echo home_url('/sobre-mi'); ?>" class="text-sm font-semibold text-gray-700 hover:text-black transition">Sobre mí</a>
                 <span class="text-gray-300">|</span>
+                <a href="<?php echo home_url('/proyectos'); ?>" class="text-sm font-semibold text-gray-700 hover:text-black transition">Proyectos</a>
+                <span class="text-gray-300">|</span>
                 <a href="<?php echo home_url('/contacto'); ?>" class="text-sm font-semibold text-gray-700 hover:text-black transition">Contacto</a>
             </div>
         </div>

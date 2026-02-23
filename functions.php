@@ -281,3 +281,8 @@ function gallo_custom_menu() {
         echo '<p class="col-span-full text-center text-gray-500">Configure el menú en Apariencia → Menús</p>';
     }
 }
+
+// =============================
+// Incluir funciones de Proyectos
+// =============================
+require_once get_template_directory() . '/include/function-proyectos.php';

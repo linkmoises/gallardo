@@ -36,6 +36,7 @@
                     'mid_size' => 2,
                     'prev_text' => '← Anterior',
                     'next_text' => 'Siguiente →',
+                    'screen_reader_text' => ' ',
                 ));
                 ?>
             </div>
@@ -51,13 +52,14 @@
                     }
                     $categories = get_the_category();
                     $category_name = !empty($categories) ? esc_html($categories[0]->name) : 'Sin categoría';
+                    $category_link = !empty($categories) ? get_category_link($categories[0]->term_id) : '#';
                     $excerpt = get_the_excerpt();
                     $comments_count = get_comments_number();
             ?>
             
             <article class="bg-white p-5 rounded-2xl border border-gray-300 shadow-sm hover:shadow-md transition group">
                 <a href="<?php the_permalink(); ?>">
-                    <span class="inline-block px-4 py-1.5 border border-gray-200 rounded-full text-[10px] font-medium text-gray-500 mb-4"><?php echo $category_name; ?></span>
+                    <span class="inline-block px-4 py-1.5 border border-gray-200 rounded-full text-[10px] font-medium text-gray-500 mb-4 hover:bg-gray-100 transition" onclick="event.stopPropagation(); window.location.href='<?php echo esc_url($category_link); ?>'"><?php echo $category_name; ?></span>
                     <h3 class="text-xl font-bold leading-tight mb-6 min-h-[3.5rem]"><?php the_title(); ?></h3>
                     <div class="aspect-[2/1] rounded-2xl overflow-hidden mb-4">
                         <img src="<?php echo esc_url($home_img_url); ?>" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
@@ -97,6 +99,7 @@
                     'mid_size' => 2,
                     'prev_text' => '← Anterior',
                     'next_text' => 'Siguiente →',
+                    'screen_reader_text' => ' ',
                 ));
                 ?>
             </div>
