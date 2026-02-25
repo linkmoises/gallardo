@@ -53,6 +53,8 @@ function ms_render_meta_box_proyecto($post) {
     $tipo   = get_post_meta($post->ID, 'tipo_proyecto', true);
     $estado = get_post_meta($post->ID, 'estado_proyecto', true);
     $enlace = get_post_meta($post->ID, 'enlace_externo', true);
+    $repositorio = get_post_meta($post->ID, 'enlace_repositorio', true);
+    $compra = get_post_meta($post->ID, 'enlace_compra', true);
     $anio   = get_post_meta($post->ID, 'anio_proyecto', true);
 
     wp_nonce_field('ms_guardar_datos_proyecto', 'ms_proyecto_nonce');
@@ -72,9 +74,12 @@ function ms_render_meta_box_proyecto($post) {
         <label><strong>Estado:</strong></label><br>
         <select name="ms_estado_proyecto" style="width:100%;">
             <option value="">Seleccionar</option>
+            <option value="planificado" <?php selected($estado, 'planificado'); ?>>Planificado</option>
             <option value="en_curso" <?php selected($estado, 'en_curso'); ?>>En curso</option>
-            <option value="publicado" <?php selected($estado, 'publicado'); ?>>Publicado</option>
             <option value="en_desarrollo" <?php selected($estado, 'en_desarrollo'); ?>>En desarrollo</option>
+            <option value="activo" <?php selected($estado, 'activo'); ?>>Activo</option>
+            <option value="publicado" <?php selected($estado, 'publicado'); ?>>Publicado</option>
+            <option value="cerrado" <?php selected($estado, 'cerrado'); ?>>Cerrado</option>
         </select>
     </p>
 
@@ -84,7 +89,8 @@ function ms_render_meta_box_proyecto($post) {
             <option value="">Seleccionar</option>
             <?php
             $current_year = date('Y');
-            for ($year = $current_year; $year >= 2020; $year--) {
+            $max_year = $current_year + 5;
+            for ($year = $max_year; $year >= 2020; $year--) {
                 echo '<option value="' . $year . '" ' . selected($anio, $year, false) . '>' . $year . '</option>';
             }
             ?>
@@ -98,6 +104,27 @@ function ms_render_meta_box_proyecto($post) {
                value="<?php echo esc_attr($enlace); ?>"
                placeholder="https://"
                style="width:100%;">
+        <small>URL del proyecto, publicación o sitio web</small>
+    </p>
+
+    <p>
+        <label><strong>Enlace al repositorio:</strong></label><br>
+        <input type="url"
+               name="ms_enlace_repositorio"
+               value="<?php echo esc_attr($repositorio); ?>"
+               placeholder="https://github.com/usuario/proyecto"
+               style="width:100%;">
+        <small>URL del repositorio de código (GitHub, GitLab, etc.)</small>
+    </p>
+
+    <p>
+        <label><strong>Enlace de compra:</strong></label><br>
+        <input type="url"
+               name="ms_enlace_compra"
+               value="<?php echo esc_attr($compra); ?>"
+               placeholder="https://tienda.com/producto"
+               style="width:100%;">
+        <small>URL de la tienda o plataforma de compra (Amazon, tienda propia, etc.)</small>
     </p>
     <?php
 }
@@ -130,6 +157,16 @@ function ms_guardar_datos_proyecto($post_id) {
     // Enlace
     if (isset($_POST['ms_enlace_externo'])) {
         update_post_meta($post_id, 'enlace_externo', esc_url_raw($_POST['ms_enlace_externo']));
+    }
+
+    // Repositorio
+    if (isset($_POST['ms_enlace_repositorio'])) {
+        update_post_meta($post_id, 'enlace_repositorio', esc_url_raw($_POST['ms_enlace_repositorio']));
+    }
+
+    // Compra
+    if (isset($_POST['ms_enlace_compra'])) {
+        update_post_meta($post_id, 'enlace_compra', esc_url_raw($_POST['ms_enlace_compra']));
     }
 
 }

@@ -28,8 +28,8 @@
     <section class="w-full mx-auto px-6 mb-6">
 
         <div class="flex justify-between items-center bg-white border border-gray-300 p-6 rounded-2xl mb-6">
-            <h2 class="text-xl font-bold"><?php echo get_the_archive_title(); ?></h2>
-            <div class="pagination-wrapper">
+            <h2 class="hidden md:block text-xl font-bold"><?php echo get_the_archive_title(); ?></h2>
+            <div class="pagination-wrapper w-full md:w-auto flex justify-center md:justify-end">
                 <?php
                 // Paginación
                 the_posts_pagination(array(
@@ -91,8 +91,8 @@
         </div>
 
         <div class="flex justify-between items-center bg-white border border-gray-300 p-6 rounded-2xl mb-6">
-            <h2 class="text-xl font-bold"><?php echo get_the_archive_title(); ?></h2>
-            <div class="pagination-wrapper">
+            <h2 class="hidden md:block text-xl font-bold"><?php echo get_the_archive_title(); ?></h2>
+            <div class="pagination-wrapper w-full md:w-auto flex justify-center md:justify-end">
                 <?php
                 // Paginación
                 the_posts_pagination(array(

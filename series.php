@@ -73,12 +73,60 @@
         </section>
 
         <section id="gallo-books" class="w-full lg:w-1/4 order-last">
+            <?php
+            // Obtener un proyecto aleatorio con imagen destacada
+            $random_proyecto_args = array(
+                'post_type'      => 'proyecto',
+                'posts_per_page' => 1,
+                'post_status'    => 'publish',
+                'orderby'        => 'rand',
+                'meta_query'     => array(
+                    array(
+                        'key'     => '_thumbnail_id',
+                        'compare' => 'EXISTS'
+                    ),
+                    array(
+                        'key'     => 'tipo_proyecto',
+                        'value'   => 'publicacion',
+                        'compare' => '='
+                    )
+                )
+            );
+            $random_proyecto = new WP_Query($random_proyecto_args);
+            
+            if ($random_proyecto->have_posts()) :
+                while ($random_proyecto->have_posts()) : $random_proyecto->the_post();
+                    $proyecto_img = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+            ?>
+            
+            <div class="bg-black rounded-2xl h-full min-h-[300px] lg:min-h-0 flex flex-col items-center justify-center text-white p-8 group">
+                <a href="/proyectos" class="text-center">
+                    <div class="w-48 mx-auto mb-6 overflow-visible rounded-lg shadow-lg transform transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:rotate-3">
+                        <img src="<?php echo esc_url($proyecto_img); ?>" 
+                             alt="<?php the_title_attribute(); ?>" 
+                             class="w-full h-auto object-cover transition-all duration-500 rounded-sm">
+                    </div>
+                    <p class="text-base font-semibold relative inline-block">
+                        Descubre más libros y publicaciones
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </p>
+                </a>
+            </div>
+            
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+            ?>
+            
             <div class="bg-black rounded-2xl h-full min-h-[200px] lg:min-h-0 flex items-center justify-center text-white p-8">
-                <a href="/publicaciones" class="text-lg font-semibold text-white relative inline-block group">
+                <a href="/proyectos" class="text-lg font-semibold text-white relative inline-block group">
                     Descubre más libros y publicaciones
                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </a>
             </div>
+            
+            <?php endif; ?>
         </section>
 
     </div>

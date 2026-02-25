@@ -63,22 +63,32 @@ Template Name: Proyectos
                     $tipo   = get_post_meta(get_the_ID(), 'tipo_proyecto', true);
                     $estado = get_post_meta(get_the_ID(), 'estado_proyecto', true);
                     $enlace = get_post_meta(get_the_ID(), 'enlace_externo', true);
+                    $repositorio = get_post_meta(get_the_ID(), 'enlace_repositorio', true);
+                    $compra = get_post_meta(get_the_ID(), 'enlace_compra', true);
                     $anio   = get_post_meta(get_the_ID(), 'anio_proyecto', true);
             ?>
 
             <div class="flex flex-col md:flex-row gap-8 mb-6 pb-6 border-b border-gray-200 last:border-0">
 
                 <?php if ($img_url): ?>
-                <div class="md:w-1/6 flex-shrink-0">
+                <div class="md:w-1/6 flex-shrink-0 overflow-hidden rounded-xl group">
                     <img src="<?php echo esc_url($img_url); ?>" 
                          alt="<?php the_title_attribute(); ?>" 
-                         class="w-full h-auto rounded-xl border border-gray-200">
+                         class="w-full h-auto rounded-xl border border-gray-200 transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <?php endif; ?>
 
                 <div class="flex-1">
 
-                    <h3 class="text-xl font-bold mb-3"><?php the_title(); ?></h3>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold"><?php the_title(); ?></h3>
+                        <?php if (current_user_can('edit_post', get_the_ID())): ?>
+                            <a href="<?php echo get_edit_post_link(get_the_ID()); ?>" 
+                               class="text-gray-400 hover:text-black transition text-sm">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                        <?php endif; ?>
+                    </div>
 
                     <div class="flex gap-2 mb-4 flex-wrap">
 
@@ -100,14 +110,34 @@ Template Name: Proyectos
                         <?php the_content(); ?>
                     </div>
 
-                    <?php if ($enlace): ?>
-                        <a href="<?php echo esc_url($enlace); ?>" 
-                           target="_blank" 
-                           rel="noopener"
-                           class="inline-block px-5 py-2 border border-black text-black text-xs font-medium rounded-full hover:bg-black hover:text-white transition">
-                            Ver proyecto →
-                        </a>
-                    <?php endif; ?>
+                    <div class="flex gap-3 flex-wrap">
+                        <?php if ($enlace): ?>
+                            <a href="<?php echo esc_url($enlace); ?>" 
+                               target="_blank" 
+                               rel="noopener"
+                               class="inline-block px-5 py-2 border border-black text-black text-xs font-medium rounded-full hover:bg-black hover:text-white transition">
+                                Ver proyecto →
+                            </a>
+                        <?php endif; ?>
+
+                        <?php if ($repositorio): ?>
+                            <a href="<?php echo esc_url($repositorio); ?>" 
+                               target="_blank" 
+                               rel="noopener"
+                               class="inline-flex items-center gap-2 px-5 py-2 border border-gray-400 text-gray-700 text-xs font-medium rounded-full hover:bg-gray-700 hover:text-white hover:border-gray-700 transition">
+                                <i class="fa-brands fa-github"></i> Repositorio
+                            </a>
+                        <?php endif; ?>
+
+                        <?php if ($compra): ?>
+                            <a href="<?php echo esc_url($compra); ?>" 
+                               target="_blank" 
+                               rel="noopener"
+                               class="inline-flex items-center gap-2 px-5 py-2 border border-green-600 text-green-700 text-xs font-medium rounded-full hover:bg-green-600 hover:text-white hover:border-green-600 transition">
+                                <i class="fa-solid fa-cart-shopping"></i> Comprar
+                            </a>
+                        <?php endif; ?>
+                    </div>
 
                 </div>
 

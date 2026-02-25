@@ -22,28 +22,19 @@
         <div class="bg-white p-6 rounded-2xl border border-gray-300 shadow-sm">
             <p class="text-xs font-bold text-center uppercase tracking-widest text-gray-400 mb-6">Mis Redes Sociales</p>
             <div class="grid grid-cols-4 gap-4">
+                <a href="https://x.com/linkmoises" target="_blank" class="flex flex-col items-center gap-1">
+                    <span class="w-10 h-10 bg-gray-100 text-black hover:bg-gradient-to-br hover:from-gray-700 hover:to-black hover:text-white rounded-full flex items-center justify-center text-sm transition-all"><i class="fa-brands fa-x-twitter"></i></span>
+                </a>
                 <a href="https://facebook.com/linkmoises" target="_blank" class="flex flex-col items-center gap-1">
-                    <span class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm"><i class="fa-brands fa-facebook-f"></i></span>
+                    <span class="w-10 h-10 bg-blue-100 text-blue-600 hover:bg-gradient-to-br hover:from-[#1877F2] hover:to-[#0C63D4] hover:text-white rounded-full flex items-center justify-center text-sm transition-all"><i class="fa-brands fa-facebook-f"></i></span>
                 </a>
                 <a href="https://instagram.com/linkmoises" target="_blank" class="flex flex-col items-center gap-1">
-                    <span class="w-10 h-10 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center text-sm"><i class="fa-brands fa-instagram"></i></span>
-                </a>
-                <a href="https://x.com/linkmoises" target="_blank" class="flex flex-col items-center gap-1">
-                    <span class="w-10 h-10 bg-gray-100 text-black rounded-full flex items-center justify-center text-sm"><i class="fa-brands fa-x-twitter"></i></span>
+                    <span class="w-10 h-10 bg-pink-100 text-pink-600 hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#E1306C] hover:to-[#F77737] hover:text-white rounded-full flex items-center justify-center text-sm transition-all"><i class="fa-brands fa-instagram"></i></span>
                 </a>
                 <a href="https://www.linkedin.com/in/linkmoises/" target="_blank" class="flex flex-col items-center gap-1">
-                    <span class="w-10 h-10 bg-gray-100 text-black rounded-full flex items-center justify-center text-sm"><i class="fa-brands fa-linkedin-in"></i></span>
+                    <span class="w-10 h-10 bg-blue-100 text-blue-600 hover:bg-gradient-to-br hover:from-[#0A66C2] hover:to-[#004182] hover:text-white rounded-full flex items-center justify-center text-sm transition-all"><i class="fa-brands fa-linkedin-in"></i></span>
                 </a>
             </div>
         </div>
-
-        <section id="gallo-books">
-            <div class="bg-black rounded-2xl h-full flex items-center justify-center text-white p-8">
-                <a href="/publicaciones" class="text-lg font-semibold text-white relative inline-block group">
-                    Descubre más libros y publicaciones
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                </a>
-            </div>
-        </section>
 
     </aside>

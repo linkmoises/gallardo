@@ -13,8 +13,8 @@
                     <div class="flex gap-6 justify-center">
                         <a target="_blank" href="https://twitter.com/linkmoises" class="tw-ic"><i class="fa-brands fa-x-twitter fa-lg white-text"></i></a>
                         <a target="_blank" href="https://facebook.com/linkmoises" class="fb-ic"><i class="fab fa-facebook-f fa-lg white-text"></i></a>
-                        <a target="_blank" href="https://linkedin.com/in/linkmoises" class="li-ic"><i class="fab fa-linkedin-in fa-lg white-text"></i></a>
                         <a target="_blank" href="https://instagram.com/linkmoises" class="ins-ic"><i class="fab fa-instagram fa-lg white-text"></i></a>
+                        <a target="_blank" href="https://linkedin.com/in/linkmoises" class="li-ic"><i class="fab fa-linkedin-in fa-lg white-text"></i></a>
 				    </div>
                 </div>
 

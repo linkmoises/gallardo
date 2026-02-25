@@ -27,11 +27,12 @@
 					<hr class="m-4" />
 					<p class="mb-3"><span class="post-read"><?php echo gallo_reading_time(); ?></span></p>
 					<p class="mb-3"><span class="post-date"><?php echo get_the_date('j M Y', get_the_ID()) ?></span></p>
-<?php edit_post_link( 'Editar', '<p>', '</p>' ); ?>
 				</div>
-<?php } elseif ( is_page() ) { ?>
+<?php } ?>
+<?php if ( is_user_logged_in() ) { ?>
+					<hr class="m-4" />
 <?php edit_post_link( 'Editar', '<p>', '</p>' ); ?>
-				<!--<p><span class="post-date"><?php echo get_the_date('j M Y', get_the_ID()) ?></span></p>-->
+					<p><a class="post-edit-link" href="<?php echo get_dashboard_url(); ?>">Tablero</a></p>
 <?php } ?>
 			</div>
 		</div>
